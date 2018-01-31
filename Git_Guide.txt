@@ -22,6 +22,6 @@ git checkout SHA -> en entrant le SHA du commit correspondant, permet de revenir
 
 git push origin master -> permet d'envoyer le git sur github (bien entendu le git doit avoir été préalablement cloné
 
-
+git pull origin master -> permet de recupérer le git sur github lorsque celui ci à déjà été cloné. On récupère ainsi les modifications qui ont été faites par les autres collaborateurs ou directement en ligne.
 
 
