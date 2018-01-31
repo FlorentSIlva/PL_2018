@@ -1,0 +1,21 @@
+Document explicatif pour utiliser git correctement :
+
+git config --global user.name "Name Surname" -> définition du nom d'utilisateur
+
+git config --global user.email "E-mail" -> définition du mail de l'utilisateur 
+
+git init -> initialisation du git (le repertoire courant est alors considéré comme un répertoire git)
+
+git add "Nomdefichier" - > ajouter un fichier à l'index du git 
+
+git commit -m "Monmessage" -> faire un commit sur les fichiers de l'index avec un message expliquant les modification apportées 
+
+git clone "URL" -> permet d'importer un git repository git sur son PC
+
+git log -> permet d'afficher l'historique des changement éffectué dans le git 
+
+git checkout SHA -> en entrant le SHA du commit correspondant, permet de revenir à l'étape correspondant à ce commit. Le SHA est le numéro d'identification du commit ex : dg8j45d7e9...
+
+
+
+
