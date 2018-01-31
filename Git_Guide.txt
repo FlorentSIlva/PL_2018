@@ -10,11 +10,17 @@ git add "Nomdefichier" - > ajouter un fichier à l'index du git
 
 git commit -m "Monmessage" -> faire un commit sur les fichiers de l'index avec un message expliquant les modification apportées 
 
+Une fois que le fichier à été ajouté à l'index vous devez le réajouter à l'index après chaque modification, cela peut être contourné par la commande suivante:
+
+git commit -a -m "Monmessage" -> faire un commit de tous les fichiers qui se sont déjà retrouvé dans l'index du git
+
 git clone "URL" -> permet d'importer un git repository git sur son PC
 
 git log -> permet d'afficher l'historique des changement éffectué dans le git 
 
 git checkout SHA -> en entrant le SHA du commit correspondant, permet de revenir à l'étape correspondant à ce commit. Le SHA est le numéro d'identification du commit ex : dg8j45d7e9...
+
+git push origin master -> permet d'envoyer le git sur github (bien entendu le git doit avoir été préalablement cloné
 
 
 
