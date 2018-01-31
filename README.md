@@ -3,7 +3,7 @@ Tous les fichiers pour le projet long 2018
 
 # Auteurs
 
-- FLorent SIlva 
+- Florent SIlva 
 - Lorris Guilloux
 - Thierry NgomaMouko
 - Walid Meskine
