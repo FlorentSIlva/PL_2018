@@ -1,0 +1,2 @@
+set(shuttles_MESSAGE_FILES "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/shuttles/msg/msgShuttleChange.msg;/home/projn7cellule/Working_Folder_Florent/ros_ws/src/shuttles/msg/msgShuttleCreate.msg")
+set(shuttles_SERVICE_FILES "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/shuttles/srv/srvGetShuttleStatus.srv;/home/projn7cellule/Working_Folder_Florent/ros_ws/src/shuttles/srv/srvGetEmptyShuttles.srv")

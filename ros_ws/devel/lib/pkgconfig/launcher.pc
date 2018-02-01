@@ -1,0 +1,8 @@
+prefix=/home/projn7cellule/Working_Folder_Florent/ros_ws/devel
+
+Name: launcher
+Description: Description of launcher
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/projn7cellule/Working_Folder_Florent/ros_ws/devel/lib 
+Requires: 

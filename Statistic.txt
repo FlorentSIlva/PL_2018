@@ -1,0 +1,52 @@
+
+Nouveau lancement du programme / date : Tue Jan 30 10:37:28 2018
+
+
+Nouveau lancement du programme / date : Tue Jan 30 10:41:08 2018
+
+
+Nouveau lancement du programme / date : Tue Jan 30 11:04:37 2018
+
+
+Nouveau lancement du programme / date : Tue Jan 30 11:05:25 2018
+
+
+Nouveau lancement du programme / date : Tue Jan 30 11:06:22 2018
+
+
+Nouveau lancement du programme / date : Tue Jan 30 11:06:38 2018
+
+
+Nouveau lancement du programme / date : Tue Jan 30 11:08:58 2018
+
+
+Nouveau lancement du programme / date : Tue Jan 30 11:10:00 2018
+
+
+Nouveau lancement du programme / date : Tue Jan 30 11:10:34 2018
+
+
+Nouveau lancement du programme / date : Tue Jan 30 11:11:59 2018
+
+Produit @  lance a temps Vrep = 3.449998 s
+Navette vide lance a temps Vrep = 10.900023 s
+Navette vide lance a temps Vrep = 11.400025 s
+Navette vide lance a temps Vrep = 11.550026 s
+Navette vide lance a temps Vrep = 11.750027 s
+Navette vide lance a temps Vrep = 14.000035 s
+Navette vide lance a temps Vrep = 14.250036 s
+Navette vide lance a temps Vrep = 14.400037 s
+Navette vide lance a temps Vrep = 14.550037 s
+Navette vide lance a temps Vrep = 14.700038 s
+Navette vide lance a temps Vrep = 14.850039 s
+Navette vide lance a temps Vrep = 15.000039 s
+
+Nouveau lancement du programme / date : Tue Jan 30 11:17:05 2018
+
+Produit B  lance a temps Vrep = 1.749999 s
+
+Nouveau lancement du programme / date : Tue Jan 30 14:17:33 2018
+
+
+Nouveau lancement du programme / date : Tue Jan 30 15:52:30 2018
+
