@@ -7,9 +7,5 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/projn7cellule/Working_Folder_Florent/ros_ws/devel:$CMAKE_PREFIX_PATH"
-export LD_LIBRARY_PATH="/home/projn7cellule/Working_Folder_Florent/ros_ws/devel/lib:/home/projn7cellule/TER_2017/ros_ws/devel/lib:/opt/ros/indigo/lib:/opt/ros/indigo/lib/x86_64-linux-gnu"
-export PKG_CONFIG_PATH="/home/projn7cellule/TER_2017/ros_ws/devel/lib/pkgconfig:/opt/ros/indigo/lib/pkgconfig:/opt/ros/indigo/lib/x86_64-linux-gnu/pkgconfig"
-export PWD="/home/projn7cellule/Working_Folder_Florent/ros_ws/build"
-export ROSLISP_PACKAGE_DIRECTORIES="/home/projn7cellule/Working_Folder_Florent/ros_ws/devel/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
-export ROS_PACKAGE_PATH="/home/projn7cellule/Working_Folder_Florent/ros_ws/src:$ROS_PACKAGE_PATH"
+export PWD="/home/projn7cellule/PL_2018/ros_ws/build"
+export ROS_PACKAGE_PATH="/home/projn7cellule/PL_2018/ros_ws/src:/home/projn7cellule/TER_2017/ros_ws/src:/opt/ros/indigo/share:/opt/ros/indigo/stacks"

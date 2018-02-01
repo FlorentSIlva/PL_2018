@@ -50,3 +50,21 @@ Nouveau lancement du programme / date : Tue Jan 30 14:17:33 2018
 
 Nouveau lancement du programme / date : Tue Jan 30 15:52:30 2018
 
+
+Nouveau lancement du programme / date : Thu Feb  1 11:00:48 2018
+
+Produit @  lance a temps Vrep = 2.049999 s
+Produit A  lance a temps Vrep = 4.099998 s
+Produit B  lance a temps Vrep = 6.100005 s
+
+Nouveau lancement du programme / date : Thu Feb  1 15:14:43 2018
+
+Produit @  lance a temps Vrep = 2.049999 s
+Produit A  lance a temps Vrep = 4.099998 s
+Produit B  lance a temps Vrep = 6.100005 s
+
+ dfjhsjkfdsbjfsdhfsdn Nouveau lancement du programme / date : Thu Feb  1 15:16:37 2018
+
+Produit @  lance a temps Vrep = 2.049999 s
+Produit A  lance a temps Vrep = 4.099998 s
+Produit B  lance a temps Vrep = 6.100005 s

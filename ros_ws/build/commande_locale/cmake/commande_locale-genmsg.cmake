@@ -2,7 +2,7 @@
 
 message(STATUS "commande_locale: 5 messages, 0 services")
 
-set(MSG_I_FLAGS "-Icommande_locale:/home/projn7cellule/Working_Folder_Florent/ros_ws/src/commande_locale/msg;-Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg")
+set(MSG_I_FLAGS "-Icommande_locale:/home/projn7cellule/PL_2018/ros_ws/src/commande_locale/msg;-Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg")
 
 # Find all generators
 find_package(gencpp REQUIRED)
@@ -15,29 +15,29 @@ add_custom_target(commande_locale_generate_messages ALL)
 
 
 
-get_filename_component(_filename "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/commande_locale/msg/Msg_SensorState.msg" NAME_WE)
+get_filename_component(_filename "/home/projn7cellule/PL_2018/ros_ws/src/commande_locale/msg/Msg_StopControl.msg" NAME_WE)
 add_custom_target(_commande_locale_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "commande_locale" "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/commande_locale/msg/Msg_SensorState.msg" "std_msgs/Header"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "commande_locale" "/home/projn7cellule/PL_2018/ros_ws/src/commande_locale/msg/Msg_StopControl.msg" "std_msgs/Header"
 )
 
-get_filename_component(_filename "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/commande_locale/msg/Msg_StopControl.msg" NAME_WE)
+get_filename_component(_filename "/home/projn7cellule/PL_2018/ros_ws/src/commande_locale/msg/Msg_Color.msg" NAME_WE)
 add_custom_target(_commande_locale_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "commande_locale" "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/commande_locale/msg/Msg_StopControl.msg" "std_msgs/Header"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "commande_locale" "/home/projn7cellule/PL_2018/ros_ws/src/commande_locale/msg/Msg_Color.msg" "std_msgs/Header"
 )
 
-get_filename_component(_filename "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/commande_locale/msg/Msg_SwitchControl.msg" NAME_WE)
+get_filename_component(_filename "/home/projn7cellule/PL_2018/ros_ws/src/commande_locale/msg/Msg_SensorState.msg" NAME_WE)
 add_custom_target(_commande_locale_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "commande_locale" "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/commande_locale/msg/Msg_SwitchControl.msg" "std_msgs/Header"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "commande_locale" "/home/projn7cellule/PL_2018/ros_ws/src/commande_locale/msg/Msg_SensorState.msg" "std_msgs/Header"
 )
 
-get_filename_component(_filename "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/commande_locale/msg/Msg_Color.msg" NAME_WE)
+get_filename_component(_filename "/home/projn7cellule/PL_2018/ros_ws/src/commande_locale/msg/Msg_PinControl.msg" NAME_WE)
 add_custom_target(_commande_locale_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "commande_locale" "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/commande_locale/msg/Msg_Color.msg" "std_msgs/Header"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "commande_locale" "/home/projn7cellule/PL_2018/ros_ws/src/commande_locale/msg/Msg_PinControl.msg" "std_msgs/Header"
 )
 
-get_filename_component(_filename "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/commande_locale/msg/Msg_PinControl.msg" NAME_WE)
+get_filename_component(_filename "/home/projn7cellule/PL_2018/ros_ws/src/commande_locale/msg/Msg_SwitchControl.msg" NAME_WE)
 add_custom_target(_commande_locale_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "commande_locale" "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/commande_locale/msg/Msg_PinControl.msg" "std_msgs/Header"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "commande_locale" "/home/projn7cellule/PL_2018/ros_ws/src/commande_locale/msg/Msg_SwitchControl.msg" "std_msgs/Header"
 )
 
 #
@@ -47,31 +47,31 @@ add_custom_target(_commande_locale_generate_messages_check_deps_${_filename}
 ### Section generating for lang: gencpp
 ### Generating Messages
 _generate_msg_cpp(commande_locale
-  "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/commande_locale/msg/Msg_SensorState.msg"
+  "/home/projn7cellule/PL_2018/ros_ws/src/commande_locale/msg/Msg_StopControl.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/commande_locale
 )
 _generate_msg_cpp(commande_locale
-  "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/commande_locale/msg/Msg_StopControl.msg"
+  "/home/projn7cellule/PL_2018/ros_ws/src/commande_locale/msg/Msg_Color.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/commande_locale
 )
 _generate_msg_cpp(commande_locale
-  "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/commande_locale/msg/Msg_SwitchControl.msg"
+  "/home/projn7cellule/PL_2018/ros_ws/src/commande_locale/msg/Msg_SensorState.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/commande_locale
 )
 _generate_msg_cpp(commande_locale
-  "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/commande_locale/msg/Msg_PinControl.msg"
+  "/home/projn7cellule/PL_2018/ros_ws/src/commande_locale/msg/Msg_PinControl.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/commande_locale
 )
 _generate_msg_cpp(commande_locale
-  "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/commande_locale/msg/Msg_Color.msg"
+  "/home/projn7cellule/PL_2018/ros_ws/src/commande_locale/msg/Msg_SwitchControl.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/commande_locale
@@ -91,15 +91,15 @@ add_custom_target(commande_locale_generate_messages_cpp
 add_dependencies(commande_locale_generate_messages commande_locale_generate_messages_cpp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/commande_locale/msg/Msg_SensorState.msg" NAME_WE)
+get_filename_component(_filename "/home/projn7cellule/PL_2018/ros_ws/src/commande_locale/msg/Msg_StopControl.msg" NAME_WE)
 add_dependencies(commande_locale_generate_messages_cpp _commande_locale_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/commande_locale/msg/Msg_StopControl.msg" NAME_WE)
+get_filename_component(_filename "/home/projn7cellule/PL_2018/ros_ws/src/commande_locale/msg/Msg_Color.msg" NAME_WE)
 add_dependencies(commande_locale_generate_messages_cpp _commande_locale_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/commande_locale/msg/Msg_SwitchControl.msg" NAME_WE)
+get_filename_component(_filename "/home/projn7cellule/PL_2018/ros_ws/src/commande_locale/msg/Msg_SensorState.msg" NAME_WE)
 add_dependencies(commande_locale_generate_messages_cpp _commande_locale_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/commande_locale/msg/Msg_Color.msg" NAME_WE)
+get_filename_component(_filename "/home/projn7cellule/PL_2018/ros_ws/src/commande_locale/msg/Msg_PinControl.msg" NAME_WE)
 add_dependencies(commande_locale_generate_messages_cpp _commande_locale_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/commande_locale/msg/Msg_PinControl.msg" NAME_WE)
+get_filename_component(_filename "/home/projn7cellule/PL_2018/ros_ws/src/commande_locale/msg/Msg_SwitchControl.msg" NAME_WE)
 add_dependencies(commande_locale_generate_messages_cpp _commande_locale_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -112,31 +112,31 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS commande_locale_generate_messages_c
 ### Section generating for lang: genlisp
 ### Generating Messages
 _generate_msg_lisp(commande_locale
-  "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/commande_locale/msg/Msg_SensorState.msg"
+  "/home/projn7cellule/PL_2018/ros_ws/src/commande_locale/msg/Msg_StopControl.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/commande_locale
 )
 _generate_msg_lisp(commande_locale
-  "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/commande_locale/msg/Msg_StopControl.msg"
+  "/home/projn7cellule/PL_2018/ros_ws/src/commande_locale/msg/Msg_Color.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/commande_locale
 )
 _generate_msg_lisp(commande_locale
-  "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/commande_locale/msg/Msg_SwitchControl.msg"
+  "/home/projn7cellule/PL_2018/ros_ws/src/commande_locale/msg/Msg_SensorState.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/commande_locale
 )
 _generate_msg_lisp(commande_locale
-  "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/commande_locale/msg/Msg_PinControl.msg"
+  "/home/projn7cellule/PL_2018/ros_ws/src/commande_locale/msg/Msg_PinControl.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/commande_locale
 )
 _generate_msg_lisp(commande_locale
-  "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/commande_locale/msg/Msg_Color.msg"
+  "/home/projn7cellule/PL_2018/ros_ws/src/commande_locale/msg/Msg_SwitchControl.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/commande_locale
@@ -156,15 +156,15 @@ add_custom_target(commande_locale_generate_messages_lisp
 add_dependencies(commande_locale_generate_messages commande_locale_generate_messages_lisp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/commande_locale/msg/Msg_SensorState.msg" NAME_WE)
+get_filename_component(_filename "/home/projn7cellule/PL_2018/ros_ws/src/commande_locale/msg/Msg_StopControl.msg" NAME_WE)
 add_dependencies(commande_locale_generate_messages_lisp _commande_locale_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/commande_locale/msg/Msg_StopControl.msg" NAME_WE)
+get_filename_component(_filename "/home/projn7cellule/PL_2018/ros_ws/src/commande_locale/msg/Msg_Color.msg" NAME_WE)
 add_dependencies(commande_locale_generate_messages_lisp _commande_locale_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/commande_locale/msg/Msg_SwitchControl.msg" NAME_WE)
+get_filename_component(_filename "/home/projn7cellule/PL_2018/ros_ws/src/commande_locale/msg/Msg_SensorState.msg" NAME_WE)
 add_dependencies(commande_locale_generate_messages_lisp _commande_locale_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/commande_locale/msg/Msg_Color.msg" NAME_WE)
+get_filename_component(_filename "/home/projn7cellule/PL_2018/ros_ws/src/commande_locale/msg/Msg_PinControl.msg" NAME_WE)
 add_dependencies(commande_locale_generate_messages_lisp _commande_locale_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/commande_locale/msg/Msg_PinControl.msg" NAME_WE)
+get_filename_component(_filename "/home/projn7cellule/PL_2018/ros_ws/src/commande_locale/msg/Msg_SwitchControl.msg" NAME_WE)
 add_dependencies(commande_locale_generate_messages_lisp _commande_locale_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -177,31 +177,31 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS commande_locale_generate_messages_l
 ### Section generating for lang: genpy
 ### Generating Messages
 _generate_msg_py(commande_locale
-  "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/commande_locale/msg/Msg_SensorState.msg"
+  "/home/projn7cellule/PL_2018/ros_ws/src/commande_locale/msg/Msg_StopControl.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/commande_locale
 )
 _generate_msg_py(commande_locale
-  "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/commande_locale/msg/Msg_StopControl.msg"
+  "/home/projn7cellule/PL_2018/ros_ws/src/commande_locale/msg/Msg_Color.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/commande_locale
 )
 _generate_msg_py(commande_locale
-  "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/commande_locale/msg/Msg_SwitchControl.msg"
+  "/home/projn7cellule/PL_2018/ros_ws/src/commande_locale/msg/Msg_SensorState.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/commande_locale
 )
 _generate_msg_py(commande_locale
-  "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/commande_locale/msg/Msg_PinControl.msg"
+  "/home/projn7cellule/PL_2018/ros_ws/src/commande_locale/msg/Msg_PinControl.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/commande_locale
 )
 _generate_msg_py(commande_locale
-  "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/commande_locale/msg/Msg_Color.msg"
+  "/home/projn7cellule/PL_2018/ros_ws/src/commande_locale/msg/Msg_SwitchControl.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/commande_locale
@@ -221,15 +221,15 @@ add_custom_target(commande_locale_generate_messages_py
 add_dependencies(commande_locale_generate_messages commande_locale_generate_messages_py)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/commande_locale/msg/Msg_SensorState.msg" NAME_WE)
+get_filename_component(_filename "/home/projn7cellule/PL_2018/ros_ws/src/commande_locale/msg/Msg_StopControl.msg" NAME_WE)
 add_dependencies(commande_locale_generate_messages_py _commande_locale_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/commande_locale/msg/Msg_StopControl.msg" NAME_WE)
+get_filename_component(_filename "/home/projn7cellule/PL_2018/ros_ws/src/commande_locale/msg/Msg_Color.msg" NAME_WE)
 add_dependencies(commande_locale_generate_messages_py _commande_locale_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/commande_locale/msg/Msg_SwitchControl.msg" NAME_WE)
+get_filename_component(_filename "/home/projn7cellule/PL_2018/ros_ws/src/commande_locale/msg/Msg_SensorState.msg" NAME_WE)
 add_dependencies(commande_locale_generate_messages_py _commande_locale_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/commande_locale/msg/Msg_Color.msg" NAME_WE)
+get_filename_component(_filename "/home/projn7cellule/PL_2018/ros_ws/src/commande_locale/msg/Msg_PinControl.msg" NAME_WE)
 add_dependencies(commande_locale_generate_messages_py _commande_locale_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/commande_locale/msg/Msg_PinControl.msg" NAME_WE)
+get_filename_component(_filename "/home/projn7cellule/PL_2018/ros_ws/src/commande_locale/msg/Msg_SwitchControl.msg" NAME_WE)
 add_dependencies(commande_locale_generate_messages_py _commande_locale_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility

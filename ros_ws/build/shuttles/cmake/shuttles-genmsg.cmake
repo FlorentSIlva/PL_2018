@@ -2,7 +2,7 @@
 
 message(STATUS "shuttles: 2 messages, 2 services")
 
-set(MSG_I_FLAGS "-Ishuttles:/home/projn7cellule/Working_Folder_Florent/ros_ws/src/shuttles/msg;-Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg")
+set(MSG_I_FLAGS "-Ishuttles:/home/projn7cellule/PL_2018/ros_ws/src/shuttles/msg;-Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg")
 
 # Find all generators
 find_package(gencpp REQUIRED)
@@ -15,24 +15,24 @@ add_custom_target(shuttles_generate_messages ALL)
 
 
 
-get_filename_component(_filename "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/shuttles/srv/srvGetShuttleStatus.srv" NAME_WE)
+get_filename_component(_filename "/home/projn7cellule/PL_2018/ros_ws/src/shuttles/msg/msgShuttleChange.msg" NAME_WE)
 add_custom_target(_shuttles_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "shuttles" "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/shuttles/srv/srvGetShuttleStatus.srv" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "shuttles" "/home/projn7cellule/PL_2018/ros_ws/src/shuttles/msg/msgShuttleChange.msg" ""
 )
 
-get_filename_component(_filename "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/shuttles/msg/msgShuttleCreate.msg" NAME_WE)
+get_filename_component(_filename "/home/projn7cellule/PL_2018/ros_ws/src/shuttles/msg/msgShuttleCreate.msg" NAME_WE)
 add_custom_target(_shuttles_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "shuttles" "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/shuttles/msg/msgShuttleCreate.msg" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "shuttles" "/home/projn7cellule/PL_2018/ros_ws/src/shuttles/msg/msgShuttleCreate.msg" ""
 )
 
-get_filename_component(_filename "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/shuttles/srv/srvGetEmptyShuttles.srv" NAME_WE)
+get_filename_component(_filename "/home/projn7cellule/PL_2018/ros_ws/src/shuttles/srv/srvGetShuttleStatus.srv" NAME_WE)
 add_custom_target(_shuttles_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "shuttles" "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/shuttles/srv/srvGetEmptyShuttles.srv" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "shuttles" "/home/projn7cellule/PL_2018/ros_ws/src/shuttles/srv/srvGetShuttleStatus.srv" ""
 )
 
-get_filename_component(_filename "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/shuttles/msg/msgShuttleChange.msg" NAME_WE)
+get_filename_component(_filename "/home/projn7cellule/PL_2018/ros_ws/src/shuttles/srv/srvGetEmptyShuttles.srv" NAME_WE)
 add_custom_target(_shuttles_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "shuttles" "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/shuttles/msg/msgShuttleChange.msg" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "shuttles" "/home/projn7cellule/PL_2018/ros_ws/src/shuttles/srv/srvGetEmptyShuttles.srv" ""
 )
 
 #
@@ -42,13 +42,13 @@ add_custom_target(_shuttles_generate_messages_check_deps_${_filename}
 ### Section generating for lang: gencpp
 ### Generating Messages
 _generate_msg_cpp(shuttles
-  "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/shuttles/msg/msgShuttleCreate.msg"
+  "/home/projn7cellule/PL_2018/ros_ws/src/shuttles/msg/msgShuttleChange.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/shuttles
 )
 _generate_msg_cpp(shuttles
-  "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/shuttles/msg/msgShuttleChange.msg"
+  "/home/projn7cellule/PL_2018/ros_ws/src/shuttles/msg/msgShuttleCreate.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/shuttles
@@ -56,13 +56,13 @@ _generate_msg_cpp(shuttles
 
 ### Generating Services
 _generate_srv_cpp(shuttles
-  "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/shuttles/srv/srvGetEmptyShuttles.srv"
+  "/home/projn7cellule/PL_2018/ros_ws/src/shuttles/srv/srvGetShuttleStatus.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/shuttles
 )
 _generate_srv_cpp(shuttles
-  "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/shuttles/srv/srvGetShuttleStatus.srv"
+  "/home/projn7cellule/PL_2018/ros_ws/src/shuttles/srv/srvGetEmptyShuttles.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/shuttles
@@ -80,13 +80,13 @@ add_custom_target(shuttles_generate_messages_cpp
 add_dependencies(shuttles_generate_messages shuttles_generate_messages_cpp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/shuttles/srv/srvGetShuttleStatus.srv" NAME_WE)
+get_filename_component(_filename "/home/projn7cellule/PL_2018/ros_ws/src/shuttles/msg/msgShuttleChange.msg" NAME_WE)
 add_dependencies(shuttles_generate_messages_cpp _shuttles_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/shuttles/msg/msgShuttleCreate.msg" NAME_WE)
+get_filename_component(_filename "/home/projn7cellule/PL_2018/ros_ws/src/shuttles/msg/msgShuttleCreate.msg" NAME_WE)
 add_dependencies(shuttles_generate_messages_cpp _shuttles_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/shuttles/srv/srvGetEmptyShuttles.srv" NAME_WE)
+get_filename_component(_filename "/home/projn7cellule/PL_2018/ros_ws/src/shuttles/srv/srvGetShuttleStatus.srv" NAME_WE)
 add_dependencies(shuttles_generate_messages_cpp _shuttles_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/shuttles/msg/msgShuttleChange.msg" NAME_WE)
+get_filename_component(_filename "/home/projn7cellule/PL_2018/ros_ws/src/shuttles/srv/srvGetEmptyShuttles.srv" NAME_WE)
 add_dependencies(shuttles_generate_messages_cpp _shuttles_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -99,13 +99,13 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS shuttles_generate_messages_cpp)
 ### Section generating for lang: genlisp
 ### Generating Messages
 _generate_msg_lisp(shuttles
-  "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/shuttles/msg/msgShuttleCreate.msg"
+  "/home/projn7cellule/PL_2018/ros_ws/src/shuttles/msg/msgShuttleChange.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/shuttles
 )
 _generate_msg_lisp(shuttles
-  "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/shuttles/msg/msgShuttleChange.msg"
+  "/home/projn7cellule/PL_2018/ros_ws/src/shuttles/msg/msgShuttleCreate.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/shuttles
@@ -113,13 +113,13 @@ _generate_msg_lisp(shuttles
 
 ### Generating Services
 _generate_srv_lisp(shuttles
-  "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/shuttles/srv/srvGetEmptyShuttles.srv"
+  "/home/projn7cellule/PL_2018/ros_ws/src/shuttles/srv/srvGetShuttleStatus.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/shuttles
 )
 _generate_srv_lisp(shuttles
-  "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/shuttles/srv/srvGetShuttleStatus.srv"
+  "/home/projn7cellule/PL_2018/ros_ws/src/shuttles/srv/srvGetEmptyShuttles.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/shuttles
@@ -137,13 +137,13 @@ add_custom_target(shuttles_generate_messages_lisp
 add_dependencies(shuttles_generate_messages shuttles_generate_messages_lisp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/shuttles/srv/srvGetShuttleStatus.srv" NAME_WE)
+get_filename_component(_filename "/home/projn7cellule/PL_2018/ros_ws/src/shuttles/msg/msgShuttleChange.msg" NAME_WE)
 add_dependencies(shuttles_generate_messages_lisp _shuttles_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/shuttles/msg/msgShuttleCreate.msg" NAME_WE)
+get_filename_component(_filename "/home/projn7cellule/PL_2018/ros_ws/src/shuttles/msg/msgShuttleCreate.msg" NAME_WE)
 add_dependencies(shuttles_generate_messages_lisp _shuttles_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/shuttles/srv/srvGetEmptyShuttles.srv" NAME_WE)
+get_filename_component(_filename "/home/projn7cellule/PL_2018/ros_ws/src/shuttles/srv/srvGetShuttleStatus.srv" NAME_WE)
 add_dependencies(shuttles_generate_messages_lisp _shuttles_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/shuttles/msg/msgShuttleChange.msg" NAME_WE)
+get_filename_component(_filename "/home/projn7cellule/PL_2018/ros_ws/src/shuttles/srv/srvGetEmptyShuttles.srv" NAME_WE)
 add_dependencies(shuttles_generate_messages_lisp _shuttles_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -156,13 +156,13 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS shuttles_generate_messages_lisp)
 ### Section generating for lang: genpy
 ### Generating Messages
 _generate_msg_py(shuttles
-  "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/shuttles/msg/msgShuttleCreate.msg"
+  "/home/projn7cellule/PL_2018/ros_ws/src/shuttles/msg/msgShuttleChange.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/shuttles
 )
 _generate_msg_py(shuttles
-  "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/shuttles/msg/msgShuttleChange.msg"
+  "/home/projn7cellule/PL_2018/ros_ws/src/shuttles/msg/msgShuttleCreate.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/shuttles
@@ -170,13 +170,13 @@ _generate_msg_py(shuttles
 
 ### Generating Services
 _generate_srv_py(shuttles
-  "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/shuttles/srv/srvGetEmptyShuttles.srv"
+  "/home/projn7cellule/PL_2018/ros_ws/src/shuttles/srv/srvGetShuttleStatus.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/shuttles
 )
 _generate_srv_py(shuttles
-  "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/shuttles/srv/srvGetShuttleStatus.srv"
+  "/home/projn7cellule/PL_2018/ros_ws/src/shuttles/srv/srvGetEmptyShuttles.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/shuttles
@@ -194,13 +194,13 @@ add_custom_target(shuttles_generate_messages_py
 add_dependencies(shuttles_generate_messages shuttles_generate_messages_py)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/shuttles/srv/srvGetShuttleStatus.srv" NAME_WE)
+get_filename_component(_filename "/home/projn7cellule/PL_2018/ros_ws/src/shuttles/msg/msgShuttleChange.msg" NAME_WE)
 add_dependencies(shuttles_generate_messages_py _shuttles_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/shuttles/msg/msgShuttleCreate.msg" NAME_WE)
+get_filename_component(_filename "/home/projn7cellule/PL_2018/ros_ws/src/shuttles/msg/msgShuttleCreate.msg" NAME_WE)
 add_dependencies(shuttles_generate_messages_py _shuttles_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/shuttles/srv/srvGetEmptyShuttles.srv" NAME_WE)
+get_filename_component(_filename "/home/projn7cellule/PL_2018/ros_ws/src/shuttles/srv/srvGetShuttleStatus.srv" NAME_WE)
 add_dependencies(shuttles_generate_messages_py _shuttles_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/shuttles/msg/msgShuttleChange.msg" NAME_WE)
+get_filename_component(_filename "/home/projn7cellule/PL_2018/ros_ws/src/shuttles/srv/srvGetEmptyShuttles.srv" NAME_WE)
 add_dependencies(shuttles_generate_messages_py _shuttles_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility

@@ -1,8 +1,8 @@
-# Install script for directory: /home/projn7cellule/Working_Folder_Florent/ros_ws/src/launcher
+# Install script for directory: /home/projn7cellule/PL_2018/ros_ws/src/launcher
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  SET(CMAKE_INSTALL_PREFIX "/home/projn7cellule/Working_Folder_Florent/ros_ws/install")
+  SET(CMAKE_INSTALL_PREFIX "/home/projn7cellule/PL_2018/ros_ws/install")
 ENDIF(NOT DEFINED CMAKE_INSTALL_PREFIX)
 STRING(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,17 +33,17 @@ IF(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 ENDIF(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/projn7cellule/Working_Folder_Florent/ros_ws/build/launcher/catkin_generated/installspace/launcher.pc")
+  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/projn7cellule/PL_2018/ros_ws/build/launcher/catkin_generated/installspace/launcher.pc")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/launcher/cmake" TYPE FILE FILES
-    "/home/projn7cellule/Working_Folder_Florent/ros_ws/build/launcher/catkin_generated/installspace/launcherConfig.cmake"
-    "/home/projn7cellule/Working_Folder_Florent/ros_ws/build/launcher/catkin_generated/installspace/launcherConfig-version.cmake"
+    "/home/projn7cellule/PL_2018/ros_ws/build/launcher/catkin_generated/installspace/launcherConfig.cmake"
+    "/home/projn7cellule/PL_2018/ros_ws/build/launcher/catkin_generated/installspace/launcherConfig-version.cmake"
     )
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/launcher" TYPE FILE FILES "/home/projn7cellule/Working_Folder_Florent/ros_ws/src/launcher/package.xml")
+  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/launcher" TYPE FILE FILES "/home/projn7cellule/PL_2018/ros_ws/src/launcher/package.xml")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 

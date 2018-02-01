@@ -187,7 +187,7 @@ if (streamConfigFile)	//Si l'ouverture à reussi
 		//////////////////////////////////////////////////////
 		ROS_INFO("Statistic.txt file ok \n");
 		char logLine[1000];
-		sprintf(logLine, "\nNouveau lancement du programme / date : %s\n", asctime(timeinfo));//Construction entête
+		sprintf(logLine, "\n dfjhsjkfdsbjfsdhfsdn Nouveau lancement du programme / date : %s\n", asctime(timeinfo));//Construction entête
 		ROS_INFO("Nouveau lancement du programme / date : %s\n", asctime(timeinfo));
 		StatsFile << logLine; // Ecriture dans le fichier
 	       	StatsFile.close();  // on referme le fichier Statistic.txt
