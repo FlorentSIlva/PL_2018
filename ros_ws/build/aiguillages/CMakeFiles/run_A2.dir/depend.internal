@@ -3,9 +3,15 @@
 
 aiguillages/CMakeFiles/run_A2.dir/src/A2.cpp.o
  /home/projn7cellule/PL_2018/ros_ws/devel/include/aiguillages/ExchangeSh.h
+ /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosEnablePublisher.h
+ /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosEnablePublisherRequest.h
+ /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosEnablePublisherResponse.h
  /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosEnableSubscriber.h
  /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosEnableSubscriberRequest.h
  /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosEnableSubscriberResponse.h
+ /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosGetInfo.h
+ /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosGetInfoRequest.h
+ /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosGetInfoResponse.h
  /home/projn7cellule/PL_2018/ros_ws/src/aiguillages/src/A2.cpp
  /home/projn7cellule/PL_2018/ros_ws/src/aiguillages/src/A2.h
  /home/projn7cellule/PL_2018/ros_ws/src/aiguillages/src/Sh.h
@@ -135,9 +141,15 @@ aiguillages/CMakeFiles/run_A2.dir/src/Sh.cpp.o
  /opt/ros/indigo/include/std_msgs/Int32.h
 aiguillages/CMakeFiles/run_A2.dir/src/aiguillage_2.cpp.o
  /home/projn7cellule/PL_2018/ros_ws/devel/include/aiguillages/ExchangeSh.h
+ /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosEnablePublisher.h
+ /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosEnablePublisherRequest.h
+ /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosEnablePublisherResponse.h
  /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosEnableSubscriber.h
  /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosEnableSubscriberRequest.h
  /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosEnableSubscriberResponse.h
+ /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosGetInfo.h
+ /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosGetInfoRequest.h
+ /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosGetInfoResponse.h
  /home/projn7cellule/PL_2018/ros_ws/src/aiguillages/src/A2.h
  /home/projn7cellule/PL_2018/ros_ws/src/aiguillages/src/Sh.h
  /home/projn7cellule/PL_2018/ros_ws/src/aiguillages/src/aiguillage_2.cpp

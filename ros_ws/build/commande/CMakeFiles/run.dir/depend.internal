@@ -4,7 +4,10 @@
 commande/CMakeFiles/run.dir/src/actionneurs.cpp.o
  /home/projn7cellule/PL_2018/ros_ws/devel/include/commande/Actionneurs.h
  /home/projn7cellule/PL_2018/ros_ws/devel/include/commande/Capteurs.h
+ /home/projn7cellule/PL_2018/ros_ws/devel/include/commande_locale/Msg_PinControl.h
+ /home/projn7cellule/PL_2018/ros_ws/devel/include/commande_locale/Msg_SensorState.h
  /home/projn7cellule/PL_2018/ros_ws/devel/include/commande_locale/Msg_StopControl.h
+ /home/projn7cellule/PL_2018/ros_ws/devel/include/commande_locale/Msg_SwitchControl.h
  /home/projn7cellule/PL_2018/ros_ws/src/commande/src/actionneurs.cpp
  /home/projn7cellule/PL_2018/ros_ws/src/commande/src/actionneurs.h
  /home/projn7cellule/PL_2018/ros_ws/src/commande/src/capteurs.h
@@ -67,6 +70,7 @@ commande/CMakeFiles/run.dir/src/actionneurs.cpp.o
  /opt/ros/indigo/include/std_msgs/Header.h
 commande/CMakeFiles/run.dir/src/capteurs.cpp.o
  /home/projn7cellule/PL_2018/ros_ws/devel/include/commande/Capteurs.h
+ /home/projn7cellule/PL_2018/ros_ws/devel/include/commande_locale/Msg_SensorState.h
  /home/projn7cellule/PL_2018/ros_ws/src/commande/src/capteurs.cpp
  /home/projn7cellule/PL_2018/ros_ws/src/commande/src/capteurs.h
  /opt/ros/indigo/include/XmlRpcDecl.h
@@ -125,11 +129,15 @@ commande/CMakeFiles/run.dir/src/capteurs.cpp.o
  /opt/ros/indigo/include/ros/wall_timer.h
  /opt/ros/indigo/include/ros/wall_timer_options.h
  /opt/ros/indigo/include/rosconsole/macros_generated.h
+ /opt/ros/indigo/include/std_msgs/Header.h
 commande/CMakeFiles/run.dir/src/commande.cpp.o
  /home/projn7cellule/PL_2018/ros_ws/devel/include/aiguillages/ExchangeSh.h
  /home/projn7cellule/PL_2018/ros_ws/devel/include/commande/Actionneurs.h
  /home/projn7cellule/PL_2018/ros_ws/devel/include/commande/Capteurs.h
+ /home/projn7cellule/PL_2018/ros_ws/devel/include/commande_locale/Msg_PinControl.h
+ /home/projn7cellule/PL_2018/ros_ws/devel/include/commande_locale/Msg_SensorState.h
  /home/projn7cellule/PL_2018/ros_ws/devel/include/commande_locale/Msg_StopControl.h
+ /home/projn7cellule/PL_2018/ros_ws/devel/include/commande_locale/Msg_SwitchControl.h
  /home/projn7cellule/PL_2018/ros_ws/devel/include/robots/MoveRobot.h
  /home/projn7cellule/PL_2018/ros_ws/devel/include/robots/RobotJoints.h
  /home/projn7cellule/PL_2018/ros_ws/devel/include/shuttles/msgShuttleChange.h
@@ -139,6 +147,9 @@ commande/CMakeFiles/run.dir/src/commande.cpp.o
  /home/projn7cellule/PL_2018/ros_ws/devel/include/shuttles/srvGetShuttleStatus.h
  /home/projn7cellule/PL_2018/ros_ws/devel/include/shuttles/srvGetShuttleStatusRequest.h
  /home/projn7cellule/PL_2018/ros_ws/devel/include/shuttles/srvGetShuttleStatusResponse.h
+ /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosEnablePublisher.h
+ /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosEnablePublisherRequest.h
+ /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosEnablePublisherResponse.h
  /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosEnableSubscriber.h
  /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosEnableSubscriberRequest.h
  /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosEnableSubscriberResponse.h
@@ -270,7 +281,10 @@ commande/CMakeFiles/run.dir/src/main_commande.cpp.o
  /home/projn7cellule/PL_2018/ros_ws/devel/include/aiguillages/ExchangeSh.h
  /home/projn7cellule/PL_2018/ros_ws/devel/include/commande/Actionneurs.h
  /home/projn7cellule/PL_2018/ros_ws/devel/include/commande/Capteurs.h
+ /home/projn7cellule/PL_2018/ros_ws/devel/include/commande_locale/Msg_PinControl.h
+ /home/projn7cellule/PL_2018/ros_ws/devel/include/commande_locale/Msg_SensorState.h
  /home/projn7cellule/PL_2018/ros_ws/devel/include/commande_locale/Msg_StopControl.h
+ /home/projn7cellule/PL_2018/ros_ws/devel/include/commande_locale/Msg_SwitchControl.h
  /home/projn7cellule/PL_2018/ros_ws/devel/include/robots/MoveRobot.h
  /home/projn7cellule/PL_2018/ros_ws/devel/include/robots/RobotJoints.h
  /home/projn7cellule/PL_2018/ros_ws/devel/include/shuttles/msgShuttleChange.h
@@ -280,6 +294,9 @@ commande/CMakeFiles/run.dir/src/main_commande.cpp.o
  /home/projn7cellule/PL_2018/ros_ws/devel/include/shuttles/srvGetShuttleStatus.h
  /home/projn7cellule/PL_2018/ros_ws/devel/include/shuttles/srvGetShuttleStatusRequest.h
  /home/projn7cellule/PL_2018/ros_ws/devel/include/shuttles/srvGetShuttleStatusResponse.h
+ /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosEnablePublisher.h
+ /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosEnablePublisherRequest.h
+ /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosEnablePublisherResponse.h
  /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosEnableSubscriber.h
  /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosEnableSubscriberRequest.h
  /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosEnableSubscriberResponse.h

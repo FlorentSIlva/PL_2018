@@ -8,4 +8,3 @@
 
 # modified environment variables
 export PWD="/home/projn7cellule/PL_2018/ros_ws/build"
-export ROS_PACKAGE_PATH="/home/projn7cellule/PL_2018/ros_ws/src:/home/projn7cellule/TER_2017/ros_ws/src:/opt/ros/indigo/share:/opt/ros/indigo/stacks"

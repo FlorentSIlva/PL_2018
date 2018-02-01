@@ -19,6 +19,9 @@ robots/CMakeFiles/robot3.dir/src/main_robot3.cpp.o
  /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosGetObjectHandle.h
  /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosGetObjectHandleRequest.h
  /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosGetObjectHandleResponse.h
+ /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosSetJointState.h
+ /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosSetJointStateRequest.h
+ /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosSetJointStateResponse.h
  /home/projn7cellule/PL_2018/ros_ws/src/robots/src/main_robot3.cpp
  /home/projn7cellule/PL_2018/ros_ws/src/robots/src/robot3.h
  /opt/ros/indigo/include/XmlRpcDecl.h
@@ -98,6 +101,9 @@ robots/CMakeFiles/robot3.dir/src/robot3.cpp.o
  /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosGetObjectHandle.h
  /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosGetObjectHandleRequest.h
  /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosGetObjectHandleResponse.h
+ /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosSetJointState.h
+ /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosSetJointStateRequest.h
+ /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosSetJointStateResponse.h
  /home/projn7cellule/PL_2018/ros_ws/src/robots/src/robot3.cpp
  /home/projn7cellule/PL_2018/ros_ws/src/robots/src/robot3.h
  /opt/ros/indigo/include/XmlRpcDecl.h

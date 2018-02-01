@@ -12,9 +12,15 @@ postes/CMakeFiles/run_Poste3.dir/src/Poste3.cpp.o
  /home/projn7cellule/PL_2018/ros_ws/devel/include/shuttles/srvGetShuttleStatus.h
  /home/projn7cellule/PL_2018/ros_ws/devel/include/shuttles/srvGetShuttleStatusRequest.h
  /home/projn7cellule/PL_2018/ros_ws/devel/include/shuttles/srvGetShuttleStatusResponse.h
+ /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosEnablePublisher.h
+ /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosEnablePublisherRequest.h
+ /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosEnablePublisherResponse.h
  /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosEnableSubscriber.h
  /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosEnableSubscriberRequest.h
  /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosEnableSubscriberResponse.h
+ /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosSetIntegerSignal.h
+ /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosSetIntegerSignalRequest.h
+ /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosSetIntegerSignalResponse.h
  /home/projn7cellule/PL_2018/ros_ws/src/postes/src/Poste3.cpp
  /home/projn7cellule/PL_2018/ros_ws/src/postes/src/Poste3.h
  /home/projn7cellule/PL_2018/ros_ws/src/postes/src/productPost.h
@@ -87,9 +93,15 @@ postes/CMakeFiles/run_Poste3.dir/src/main_poste3.cpp.o
  /home/projn7cellule/PL_2018/ros_ws/devel/include/shuttles/srvGetShuttleStatus.h
  /home/projn7cellule/PL_2018/ros_ws/devel/include/shuttles/srvGetShuttleStatusRequest.h
  /home/projn7cellule/PL_2018/ros_ws/devel/include/shuttles/srvGetShuttleStatusResponse.h
+ /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosEnablePublisher.h
+ /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosEnablePublisherRequest.h
+ /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosEnablePublisherResponse.h
  /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosEnableSubscriber.h
  /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosEnableSubscriberRequest.h
  /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosEnableSubscriberResponse.h
+ /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosSetIntegerSignal.h
+ /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosSetIntegerSignalRequest.h
+ /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosSetIntegerSignalResponse.h
  /home/projn7cellule/PL_2018/ros_ws/src/postes/src/Poste3.h
  /home/projn7cellule/PL_2018/ros_ws/src/postes/src/main_poste3.cpp
  /home/projn7cellule/PL_2018/ros_ws/src/postes/src/productPost.h

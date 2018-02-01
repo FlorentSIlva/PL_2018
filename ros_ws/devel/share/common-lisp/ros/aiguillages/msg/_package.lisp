@@ -1,10 +1,10 @@
 (cl:defpackage aiguillages-msg
   (:use )
   (:export
-   "<EXCHANGESH>"
-   "EXCHANGESH"
    "<CAPTEURS>"
    "CAPTEURS"
+   "<EXCHANGESH>"
+   "EXCHANGESH"
    "<ACTIONNEURS>"
    "ACTIONNEURS"
   ))

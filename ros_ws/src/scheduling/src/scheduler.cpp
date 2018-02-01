@@ -258,8 +258,8 @@ if (maxShuttleNumber >0)
 			//ROS_INFO("Statistic.txt file ok");
 			char logLine[1000];
 			// Construction Ligne avec notamment la date de lancement 
-			sprintf(logLine, "Produit %s lance a temps Vrep = %f s\n",productPointer->name.c_str(), srv_GetInfoVREP.response.simulationTime);
-			ROS_INFO("Produit %s lance a temps Vrep = %f s",productPointer->name.c_str(), srv_GetInfoVREP.response.simulationTime);
+			sprintf(logLine, "Produit %s lance a teub teub temps Vrep = %f s\n",productPointer->name.c_str(), srv_GetInfoVREP.response.simulationTime);
+			ROS_INFO("Produit %s lance a teub temps Vrep = %f s",productPointer->name.c_str(), srv_GetInfoVREP.response.simulationTime);
 			StatsFile << logLine; // Ecriture dans le fichier 
 		       	StatsFile.close();  // on referme le fichier Statistic.txt
 
@@ -331,8 +331,8 @@ void Scheduler::productOutCallBack(const std_msgs::Int32::ConstPtr& msg) // on r
 		ROS_INFO("Statistic.txt file ok");
 		char logLine[1000];
 		// Construction Ligne avec notamment la date de lancement 
-		sprintf(logLine, "Produit %s termine a TEUB temps Vrep = %f s\n",finalProductName.c_str(), srv_GetInfoVREP.response.simulationTime);
-		ROS_INFO("Produit %s termine a TEUB temps Vrep = %f s\n",finalProductName.c_str(), srv_GetInfoVREP.response.simulationTime);
+		sprintf(logLine, "Produit %s termine a temps Vrep = %f s\n",finalProductName.c_str(), srv_GetInfoVREP.response.simulationTime);
+		ROS_INFO("Produit %s termine a temps Vrep = %f s\n",finalProductName.c_str(), srv_GetInfoVREP.response.simulationTime);
 		StatsFile << logLine; // Ecriture dans le fichier 
 		StatsFile.close();  // on referme le fichier Statistic.txt
 		}
