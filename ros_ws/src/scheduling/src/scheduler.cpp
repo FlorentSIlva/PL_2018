@@ -331,8 +331,13 @@ void Scheduler::productOutCallBack(const std_msgs::Int32::ConstPtr& msg) // on r
 		ROS_INFO("Statistic.txt file ok");
 		char logLine[1000];
 		// Construction Ligne avec notamment la date de lancement 
+<<<<<<< HEAD
 		sprintf(logLine, "Produit %s termine a temps Vrep = %f s\n",finalProductName.c_str(), srv_GetInfoVREP.response.simulationTime);
 		ROS_INFO("Produit %s termine a temps Vrep = %f s\n",finalProductName.c_str(), srv_GetInfoVREP.response.simulationTime);
+=======
+		sprintf(logLine, "Produit %s termine a TEUB 2 temps Vrep = %f s\n",finalProductName.c_str(), srv_GetInfoVREP.response.simulationTime);
+		ROS_INFO("Produit %s termine a TEUB temps Vrep = %f s\n",finalProductName.c_str(), srv_GetInfoVREP.response.simulationTime);
+>>>>>>> d42444b22bb91487e7ae875937a1b35352242d73
 		StatsFile << logLine; // Ecriture dans le fichier 
 		StatsFile.close();  // on referme le fichier Statistic.txt
 		}
