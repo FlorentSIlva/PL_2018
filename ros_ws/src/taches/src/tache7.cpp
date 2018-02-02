@@ -199,6 +199,9 @@ void Tache7::init(ros::NodeHandle noeud, std::string executionPath)
 
 		//Configuration temps entre lancement
 		std::getline(streamConfigFile,contents);
+
+		//Configuration des priorités
+		std::getline(streamConfigFile,contents);
 	
 		//GAMME/TEMPS
 		while (std::getline(streamConfigFile, contents))

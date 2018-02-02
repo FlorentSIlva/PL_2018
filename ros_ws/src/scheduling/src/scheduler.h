@@ -29,6 +29,7 @@ private:
 
 int maxShuttleNumber;	
 int scheduledLaunchDate[10];
+int scheduledPriority[6];
 int numberOfProduct;
 int nextCount;
 float lastLaunchDate;

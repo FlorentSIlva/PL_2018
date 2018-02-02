@@ -51,7 +51,7 @@ std::ifstream streamConfigFile(configFile.c_str(), std::ios::in); 	// Ouverture 
 	
 if (streamConfigFile)	//Si l'ouverture à reussi
 {
-	std::string pNameFF,destinationPart,launchDatePart,jobTimePart,maxShuttlePart,contents; // string servant à l'extraction d'information
+	std::string pNameFF,destinationPart,launchDatePart,jobTimePart,maxShuttlePart,priorityPart,contents; // string servant à l'extraction d'information
 
 	//saut des lignes d'entêtes, repèrage du start (on passe toutes les lignes tant que le mot Start n'y figure pas)
 	
@@ -95,6 +95,31 @@ if (streamConfigFile)	//Si l'ouverture à reussi
   			p1 = std::strtok(NULL," ");
   			}
   		delete[] cstr1; // comme la création est dynamique, on supprime l'objet pour libèrer la mémoire
+
+	// Configuration priorités
+
+	std::getline(streamConfigFile,contents);
+	ROS_INFO("%s",contents.c_str())	;
+	std::size_t pos4 = contents.find(":"); // même idée que précedemment 
+	priorityPart = contents.substr(pos4+1);
+
+	char * cstr4 = new char [priorityPart.length()+1]; // 
+  	std::strcpy (cstr4, priorityPart.c_str());	// création objet cstring
+
+		// cstr now contains a c-string copy of str
+		int n4 = 1; //compteur sur les dates de lancement 
+ 	 	char * p4 = std::strtok (cstr4," "); // cf strtok sur cplusplus.com, permet un découpage du cstring fonction de l'espace
+  		while (p4!=0)
+  			{
+    			ROS_INFO ("p4 = %s",p4) ;
+			scheduledPriority[n4] = atoi(p4);		
+			ROS_INFO ("Priorite numero %d = %d",n4,scheduledPriority[n4]);
+  			p4 = std::strtok(NULL," ");
+			n4++;
+  			}
+  		delete[] cstr4; // comme la création est dynamique, on supprime l'objet pour libèrer la mémoire
+
+	// Fin config priorités
 	
 	//Configuration Produits
 	
