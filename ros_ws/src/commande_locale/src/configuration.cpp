@@ -65,6 +65,9 @@ if (streamConfigFile)
 
 	//Configuration temps entre lancement
 	std::getline(streamConfigFile,contents);
+
+	//Configuration des priorités
+	std::getline(streamConfigFile,contents);
 	
 	while (std::getline(streamConfigFile, contents))
 		{

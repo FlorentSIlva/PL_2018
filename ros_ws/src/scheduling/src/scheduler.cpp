@@ -11,6 +11,7 @@ Scheduler::Scheduler()
 	nextCount = 0;
 	lastLaunchDate = 0;
 	maxShuttleNumber = 6;
+	maxProductNumber = 10;
 }
 
 // Initialisation de l'objet 
@@ -25,6 +26,8 @@ bool Scheduler::init(ros::NodeHandle nh, std::string executionPath)
 	// Publishers Initialisation
 	pubCreateShuttle = nh.advertise<scheduling::Msg_LoadShuttle>("/scheduling/NextProduct",10);
 	pubDelShuttle = nh.advertise<std_msgs::Int32>("/commande_navette/DelShuttle",10);
+
+	pubProductToTask= nh.advertise<std_msgs::Int32>("/P4_Tache/ProduitATraiter", 10);
 
 // Récupération du chemin vers le Working_Folder, permet de travailler en chemin relatif
 int count = 0 ;
@@ -51,7 +54,7 @@ std::ifstream streamConfigFile(configFile.c_str(), std::ios::in); 	// Ouverture 
 	
 if (streamConfigFile)	//Si l'ouverture à reussi
 {
-	std::string pNameFF,destinationPart,launchDatePart,jobTimePart,maxShuttlePart,priorityPart,contents; // string servant à l'extraction d'information
+	std::string pNameFF,destinationPart,launchDatePart,jobTimePart,maxShuttlePart,maxProductPart,priorityPart,contents; // string servant à l'extraction d'information
 
 	//saut des lignes d'entêtes, repèrage du start (on passe toutes les lignes tant que le mot Start n'y figure pas)
 	
@@ -73,6 +76,11 @@ if (streamConfigFile)	//Si l'ouverture à reussi
 	//ROS_INFO("maxShuttlePart =%s",maxShuttlePart.c_str());
 	maxShuttleNumber = atoi( maxShuttlePart.c_str()); // atoi = conversion vers integer !
 	ROS_INFO("maxShuttleNumber = %d",maxShuttleNumber);
+
+	maxProductPart = contents.substr(pos0+3); // on récupère le string qui se trouve après ':'
+	//ROS_INFO("maxProductPart =%s",maxProductPart.c_str());
+	maxProductNumber = atoi( maxProductPart.c_str()); // atoi = conversion vers integer !
+	ROS_INFO("maxProductNumber = %d",maxProductNumber);
 
 	//Configuration temps entre lancement
 	
@@ -235,7 +243,7 @@ Scheduler::~Scheduler()
 // Scheduling Function
 void Scheduler::launchNextSchedule(){
 
-if (maxShuttleNumber >0)
+if ((maxShuttleNumber >0) || (maxProductNumber >0))
 	{
 
 	int nextDelay = scheduledLaunchDate[nextCount]; // définition next delays 
@@ -265,6 +273,18 @@ if (maxShuttleNumber >0)
 		Product* productPointer;
 		productPointer = iteratorPMap->second;	
 		
+		if ((maxProductNumber >0) && (maxShuttleNumber ==0))
+		{
+		//Création du produit sur la plateforme 4
+		std_msgs::Int32 msg;
+		msg.data = productPointer->productNumber;
+		pubProductToTask.publish(msg);
+		ROS_INFO("ORDO Creation produit numero %d sur plateforme" ,msg.data);
+		maxProductNumber--;
+		}
+
+		if (maxShuttleNumber >0) 
+		{
 		//Creation du message de lancement de produit destiné à la commande_locale
 		scheduling::Msg_LoadShuttle mymsg;
 		mymsg.shuttleType = 'F';
@@ -273,6 +293,9 @@ if (maxShuttleNumber >0)
 
 		ROS_INFO("ORDO Creation navette avec produit %s numero = %d ",productPointer->name.c_str(), mymsg.product);
 		pubCreateShuttle.publish(mymsg);
+		maxShuttleNumber--; 	// diminution du nombre de produit instantiable
+		}
+
 
 		//ECRITURE LOG FILE///////////////////////////////////////////////////////////////////////////
 
@@ -283,8 +306,8 @@ if (maxShuttleNumber >0)
 			//ROS_INFO("Statistic.txt file ok");
 			char logLine[1000];
 			// Construction Ligne avec notamment la date de lancement 
-			sprintf(logLine, "Produit %s lance a teub teub temps Vrep = %f s\n",productPointer->name.c_str(), srv_GetInfoVREP.response.simulationTime);
-			ROS_INFO("Produit %s lance a teub temps Vrep = %f s",productPointer->name.c_str(), srv_GetInfoVREP.response.simulationTime);
+			sprintf(logLine, "Produit %s lance a temps Vrep = %f s\n",productPointer->name.c_str(), srv_GetInfoVREP.response.simulationTime);
+			ROS_INFO("Produit %s lance a temps Vrep = %f s",productPointer->name.c_str(), srv_GetInfoVREP.response.simulationTime);
 			StatsFile << logLine; // Ecriture dans le fichier 
 		       	StatsFile.close();  // on referme le fichier Statistic.txt
 
@@ -294,7 +317,6 @@ if (maxShuttleNumber >0)
 
 		/////////////////////////////////////////////////////////////////////////////////////////////
 		
-		maxShuttleNumber--; 	// diminution du nombre de produit instantiable
 		iteratorPMap++;		// avance dans la map produit
 		nextCount++; 		// permet d'être en phase vis à vis du tableau des temps entre les lancements des produits
 		nextCount = nextCount%numberOfProduct; //permet de revenir à la premier case quand on a fini le tableau 

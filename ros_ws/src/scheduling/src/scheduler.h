@@ -27,7 +27,8 @@ class Scheduler
 {
 private:
 
-int maxShuttleNumber;	
+int maxShuttleNumber;
+int maxProductNumber;	
 int scheduledLaunchDate[10];
 int scheduledPriority[6];
 int numberOfProduct;
@@ -41,6 +42,7 @@ std::map<int,Product*>::iterator iteratorPMap,iteratorPMapOut;
 std::map<int,Product*> ProductsMap; // la clé est le numéro de la phase de lancement
 
 ros::Publisher pubCreateShuttle, pubDelShuttle;
+ros::Publisher pubProductToTask;
 ros::Subscriber subEndOfProductManufacture,subManualLaunchOfProduct;
 
 ros::ServiceClient client_simRosGetInfo;
