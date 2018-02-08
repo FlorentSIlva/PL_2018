@@ -220,7 +220,7 @@ floatingLicensePort = 20249
 // =================================================
 mouseWheelZoomFactor = 1
 dynamicActivityRange = 1000
-objectTranslationStepSize = 0,0249999985
+objectTranslationStepSize = 0,100000001
 objectRotationStepSize = 5
 workThreadCount = 0 // -1, 0-256. (0 to disable, -1 for automatic setting (i.e. thread cnt=core cnt)).
 processorCoreAffinity = 0 // recommended to keep 0 (-1:os default, 0:all threads on same core, m: affinity mask (bit1=core1, bit2=core2, etc.))
