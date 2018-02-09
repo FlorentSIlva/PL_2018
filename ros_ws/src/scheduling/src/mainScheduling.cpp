@@ -6,7 +6,7 @@
 #include <std_msgs/Bool.h>
 
 
-bool on = false ;  //Variable globale pour servant à la mise en marhce du mode auto par l'interface utilisateur
+bool on = false ;  //Variable globale pour servant à la mise en marche du mode auto par l'interface utilisateur
 
 
 //Callback du message recu par l'ordonnacement servant à mettre à jour la variable qui commande l'activation du noeud

@@ -29,6 +29,19 @@
 #include <commande_locale/Msg_Color.h>
 
 #include "productPost.h"
+#include <ros/ros.h>
+#include <string>
+#include <std_msgs/Int32.h>
+#include <std_msgs/Bool.h>
+#include <cstdlib>
+#include <stdlib.h>
+#include <map>
+#include <vector>
+#include <fstream>
+#include <iostream>
+#include <cstring>
+#include <vrep_common/simRosGetInfo.h>
+#include <shuttles/srvGetShuttleStatus.h>
 
 
 using namespace std;

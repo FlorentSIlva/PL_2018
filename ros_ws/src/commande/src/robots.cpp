@@ -133,7 +133,7 @@ void Robots::EnvoyerPosition(int numRobot, int numPosition)
 	{
 		case 1:	
 			robotPosition[0]=-10;
-			pub_robot_position1.publish(msg);
+			pub_robot_position1.publish(msg);  // pub_robot_position1 est un publisher qui publie dans le topic /commande/Simulation/SendPositionRobot1
 			break;
 
 		case 2:	
@@ -181,7 +181,7 @@ void Robots::EnvoyerAngles(int numRobot, int angle1, int angle2, int angle3, int
 	{
 		case 1:	
 			robotPosition[0]=-10;
-			pub_robot_joints1.publish(msg);
+			pub_robot_joints1.publish(msg); 
 			break;
 
 		case 2:	
@@ -211,32 +211,32 @@ void Robots::EnvoyerAngles(int numRobot, int angle1, int angle2, int angle3, int
 //Fonction permettant d'envoyer une position prédéfinie, l'état souhaité du bras et l'état souhaité de la pince d'un robot choisi
 void Robots::ControlerRobot(int numRobot, int numPosition, int bras, int pince)
 {
-	robots::MoveRobot controle;
+	robots::MoveRobot controle; //robots::MoveRobot est une strcture contenue dans le namespace robots (voir fichier MoveRobot.h dans le dossier include/robots)
 
-	controle.position = numPosition;
+	controle.position = numPosition; // cette strcture (MoveRobot) contient 3 variables, postion, bras et pince
 	controle.bras = bras;
 	controle.pince = pince;
 
 	if(numPosition<1 || numPosition>4)
 	{
-		cout <<  BOLDMAGENTA << "Le numero de la position doit etre compris entre 1 et 4." << RESET << endl;
+		cout <<  BOLDMAGENTA << "Le numero de la position doit etre compris entre 1 et 4." << RESET << endl; // on a que 4 position possibles, ces position sont 1 2 3 et 4 et ont étés definies dans un autre fichier
 	}
 
 	if(bras != -1 && bras != 1)
 	{
-		cout <<  BOLDMAGENTA << "Cet etat du bras est inaccessible." << RESET << endl;
+		cout <<  BOLDMAGENTA << "Cet etat du bras est inaccessible." << RESET << endl; // on a que 2 états du bras possibles, ces états sont -1 et +1 voir fichier 
 	}
 
 	if(pince != -1 && pince != 1)
 	{
-		cout <<  BOLDMAGENTA << "Cet etat de la pince est inaccessible." << RESET << endl;
+		cout <<  BOLDMAGENTA << "Cet etat de la pince est inaccessible." << RESET << endl; // on a que 2 états de pince possibles, ces états sont -1 et +1 voir fichier 
 	}
 
-	switch(numRobot)
+	switch(numRobot)         // on fait un switch case celon le numéro du robot eton publie dans les topics correspondant au 4 robots disponibles 
 	{
 		case 1:	
 			robotPosition[0]=-10;
-			pub_controler_robot1.publish(controle);
+			pub_controler_robot1.publish(controle); //  pub_controler_robot1 est un publisher qui publie dans le topic /commande/Simulation/retourCommande1 le subscriber est Robot1
 			break;
 
 		case 2:	

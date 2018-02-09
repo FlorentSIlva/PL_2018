@@ -16,8 +16,29 @@ void SensorCallback()
 
 // Initialisation du main
 int main(int argc, char **argv)
-{	
+{
 
+// Récupération du chemin vers le Working_Folder, permet de travailler en chemin relatif
+int count = 0 ;
+int pos = 0 ;
+std::string executionPath = argv[0];
+while (count < 4) // le chemin sous linux est normalement standard d'où la présence de la constante 4, il est possible qu'il faille faire évoluer ce point si ce n'est plus le cas
+	{
+	if(executionPath[pos] == '/') count++;  // on cherche dans la chaine le 4ème '/' qui permet de récupérer le chemin absolu du Working Folder
+	pos++;					// Cela est normalement garanti par le faite que le setup install toujours dans le dossier racine de l'utilisateur
+	}
+	
+std::string Working_Folder = executionPath.substr(0,pos);
+ROS_INFO ("$%s$", Working_Folder.c_str()) ;
+
+	
+//Initialisation des produits à l'aide du fichier de configuration
+
+	//Définition du chemin du fichier de config et log
+std::string configFile = Working_Folder + "/ProductConfiguration.config";
+std::string logFile = Working_Folder + "/Statistic.txt";	
+
+	
 	// Initialisation du noeud ros et création d'un handle associé au noeud
 	ros::init(argc, argv, "Poste1");	
 	ros::NodeHandle nh;
@@ -85,6 +106,25 @@ int main(int argc, char **argv)
 						if (it != Poste1.ProductsMap.end()) {		// Vrai si l'itérateur n'est pas hors de la liste
 						
 							Poste1.pubPinOn.publish(Poste1.num_PIN);	// Sortir les ergots
+
+		std::ofstream StatsFile(logFile.c_str(), std::ios::out | std::ios::app);
+		if(StatsFile)  // si l'ouverture a réussi...
+			{
+
+			//ROS_INFO("Statistic.txt file ok");
+			char logLine[1000];
+			// Construction Ligne avec notamment la date de lancement 
+			sprintf(logLine, "Produit entrain d'être traité au poste 1");
+			StatsFile << logLine; // Ecriture dans le fichier 
+		       	StatsFile.close();  // on referme le fichier Statistic.txt
+
+			}
+
+	       	else ROS_ERROR("Impossible de creer ou ouvrir le fichier Statistic.txt !");
+
+
+
+
 							Poste1.pubProductInPost.publish(num_handle); //Publie l'handle de la navette à la commande
 							Poste1.pubProductToTask.publish(product);	// Publie à tâche le n° du produit
 

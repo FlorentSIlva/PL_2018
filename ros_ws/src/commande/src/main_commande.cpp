@@ -96,9 +96,6 @@ int main(int argc, char **argv)
 			
 		}
 
-
-
-
 		//t3
 		if(M[2]!=0 && M[50]==1 && cmd.ProduitSurNavette(M[2])==0) 
 		{
@@ -106,9 +103,8 @@ int main(int argc, char **argv)
 			M[5]=M[2];
 			M[2]=0;
 			M[50]=0;
-			Robots.ControlerRobot(1, 1, -1, 1);
+			Robots.ControlerRobot(1, 1, -1, 1); /// Pour comprendre comment cette fonction marche, la fonction ce trouve dans robots.cpp
 		}
-
 
 		//t4
 		if(M[5]!=0 &&   Robots.PinceEnPosition(1)==1)
@@ -128,7 +124,6 @@ int main(int argc, char **argv)
 			M[14]=0;
 			Robots.ControlerRobot(1, 2, -1, -1);
 		}
-
 
 		//t6
 		if(M[7]!=0  &&   Robots.RobotEnPosition(1)==1&& Robots.BrasEnPosition(1)==-1 && Robots.PinceEnPosition(1)==-1)
@@ -170,7 +165,6 @@ int main(int argc, char **argv)
 			M[0]++;
 			Robots.ControlerRobot(1, 1, -1, -1);
 		}
-
 
 		//t10
 		if(M[11]!=0  &&   Robots.RobotEnPosition(1)==1 && Robots.BrasEnPosition(1)==-1 && Robots.PinceEnPosition(1)==-1)
@@ -280,9 +274,6 @@ int main(int argc, char **argv)
 			M[103]--;
 			cmd.NavettePartie(2);
 		}
-
-
-		
 
 		//t103
 		if(M[102]!=0)

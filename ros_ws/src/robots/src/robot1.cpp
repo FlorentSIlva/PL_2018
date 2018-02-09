@@ -37,7 +37,7 @@ void Robot1::EnvoyerRobot(int numposition)
 	switch(numposition)
 	{
 		case 1:
-			Rpos[0]=128*pi/180;
+			Rpos[0]=128*pi/180;       // attributs correspondant au 
 			Rpos[1]=90*pi/180;
 			Rpos[2]=90*pi/180;
 			Rpos[3]=80*pi/180;
