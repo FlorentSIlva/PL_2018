@@ -42,7 +42,7 @@ std::map<int,Product*>::iterator iteratorPMap,iteratorPMapOut;
 std::map<int,Product*> ProductsMap; // la clé est le numéro de la phase de lancement
 
 ros::Publisher pubCreateShuttle, pubDelShuttle;
-ros::Publisher pubProductToTask;
+ros::Publisher pubProductInPost;
 ros::Subscriber subEndOfProductManufacture,subManualLaunchOfProduct;
 
 ros::ServiceClient client_simRosGetInfo;

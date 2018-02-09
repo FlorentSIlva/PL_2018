@@ -174,6 +174,7 @@ public:
 	void NavettePartie(int numPoste);//Remet la variable Navette en Pi à 0;
 	int NavetteDisponible();//Renvoie le handle d'une navette vide dans d0
 	int NouvelleNavette(); //Renvoie le handle de la navette qui est créée par le noeud Ordonnancement
+	int NouveauProduit();//Renvoie 1 si il y a un produit sur la plateforme 4
 	void ReinitialiserNouvelleNavette();//Réinitialise le handle de la navette nouvellement créée
 
 

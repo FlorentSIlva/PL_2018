@@ -60,17 +60,16 @@ int main(int argc, char **argv)
 	while (ros::ok())
 	{
 		
+		if(cmd.NouveauProduit()!=0)
+		{
+			modif=1;
+			M[313]++;
+		}
+
 		if(cmd.NouvelleNavette()!=0)
 		{
 			modif=1;
-			int NouvelleDestination = cmd.ProduitSurNavette(cmd.NouvelleNavette());
-			switch(NouvelleDestination)
-			{
-				case 1 : M[3]++;break;
-				case 2 : M[103]++;break;
-				case 3 : M[203]++;break;
-				case 4 : M[303]++;break;
-			}
+			M[0]++;
 			cmd.ReinitialiserNouvelleNavette();
 		}
 
@@ -235,16 +234,6 @@ int main(int argc, char **argv)
 			modif=1;
 			cout<<"Envoi vers P3 : produit : "<<cmd.ProduitSurNavette(M[15])<<endl;
 			cmd.DefinirDestination(M[15], 3);
-			M[15]=0;
-		}
-
-		//t16
-		if(M[15]!=0 && cmd.ProduitSurNavette(M[15])==4)//envoie vers P4
-		{
-			M[303]++;
-			modif=1;
-			cout<<"Envoi vers P4 : produit : "<<cmd.ProduitSurNavette(M[15])<<endl;
-			cmd.DefinirDestination(M[15], 4);
 			M[15]=0;
 		}
 
@@ -428,16 +417,6 @@ int main(int argc, char **argv)
 			M[115]=0;
 		}
 
-		//t116
-		if(M[115]!=0 && cmd.ProduitSurNavette(M[115])==4)//envoie vers P4
-		{
-			M[303]++;
-			modif=1;
-			cout<<"Envoi vers P4 : produit : "<<cmd.ProduitSurNavette(M[115])<<endl;
-			cmd.DefinirDestination(M[115], 4);
-			M[115]=0;
-		}
-
 		//t117
 		if(M[115]!=0 && cmd.ProduitSurNavette(M[115])==5)//sortie du produit
 		{
@@ -613,16 +592,6 @@ int main(int argc, char **argv)
 			M[215]=0;
 		}
 
-		//t216
-		if(M[215]!=0 && cmd.ProduitSurNavette(M[215])==4)//envoie vers P4
-		{
-			M[303]++;
-			modif=1;
-			cout<<"Envoi vers P4 : produit : "<<cmd.ProduitSurNavette(M[215])<<endl;
-			cmd.DefinirDestination(M[215], 4);
-			M[215]=0;
-		}
-
 		//t217
 		if(M[215]!=0 && cmd.ProduitSurNavette(M[215])==5)//sortie du produit
 		{
@@ -645,21 +614,10 @@ int main(int argc, char **argv)
 			M[302]=cmd.NavetteStoppeeVide(4);
 			M[301]--;
 		}
-
-		//302
-		if(M[303]!=0 && cmd.NavetteStoppee(4)!=0)
-		{
-			modif=1;
-			M[304]=cmd.NavetteStoppee(4);
-			M[303]--;
-			cmd.NavettePartie(4);
-		}
-
-
 		
 
 		//t303
-		if(M[302]!=0 && M[250]==1 && cmd.ProduitSurNavette(M[304])==0) 
+		if(M[302]!=0 && M[250]==1) 
 		{
 			modif=1;
 			M[305]=M[302];
@@ -698,58 +656,14 @@ int main(int argc, char **argv)
 			Robots.MonterBras(2);
 		}
 
-		//t307
-		if(M[304]!=0 && M[250]==1 && cmd.ProduitSurNavette(M[304])!=0)
-		{
-			modif=1;
-			M[309]=M[304];
-			M[304]=0;
-			M[250]=0;
-			Robots.ControlerRobot(2, 3, -1, 1);
-		}
-
-
-		//t308
-		if(M[309]!=0  &&  Robots.RobotEnPosition(2)==1 && Robots.BrasEnPosition(2)==-1 && Robots.PinceEnPosition(2)==1)
-		{
-			modif=1;
-			M[310]=M[309];
-			M[309]=0;
-			Robots.MonterBras(2);
-		}
-	
-		//t309
-		if(M[310]!=0 && Robots.BrasEnPosition(2)==1)
-		{
-			modif=1;
-			M[311]=M[310];
-			M[310]=0;
-			cmd.NavettePartie(4);
-			cmd.PiecePrise(4);
-			M[0]++;
-			Robots.ControlerRobot(2, 4, -1, -1);
-		}
-
-
-		//t310
-		if(M[311]!=0  &&   Robots.RobotEnPosition(2)==1 && Robots.BrasEnPosition(2)==-1 && Robots.PinceEnPosition(2)==-1)
-		{
-			modif=1;
-			M[313]=M[311];
-			M[311]=0;
-			M[312]=1;
-			Robots.MonterBras(2);
-			
-		}
-
 		//t311
-		if(M[313]!=0 && M[0]!=0 && Robots.TraitementFini(4)==1)
+		if(M[313]!=0 && M[0]!=0)
 		{
 			modif=1;
 			M[0]--;
 			M[313]=0;
 			M[314]=1;
-			M[301]++;
+			M[301]=1;
 			int handle;
 			handle=cmd.NavetteDisponible();
 			cmd.DefinirDestination(handle, 4);
@@ -767,16 +681,6 @@ int main(int argc, char **argv)
 			cmd.PieceDeposee(4);
 			usleep(500000);
 		}
-
-		//t313
-		if(M[312]!=0 && Robots.BrasEnPosition(2)==1)
-		{
-			modif=1;
-			
-			M[312]=0;
-			M[250]=1;			
-		}
-
 
 		//t314
 		if(M[315]!=0 && cmd.ProduitSurNavette(M[315])==1)//envoie vers P1

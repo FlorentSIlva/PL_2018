@@ -27,7 +27,7 @@ bool Scheduler::init(ros::NodeHandle nh, std::string executionPath)
 	pubCreateShuttle = nh.advertise<scheduling::Msg_LoadShuttle>("/scheduling/NextProduct",10);
 	pubDelShuttle = nh.advertise<std_msgs::Int32>("/commande_navette/DelShuttle",10);
 
-	pubProductToTask= nh.advertise<std_msgs::Int32>("/P4_Tache/ProduitATraiter", 10);
+	pubProductInPost= nh.advertise<std_msgs::Int32>("/Cmde_P4/ProduitPresentP4", 10);
 
 // Récupération du chemin vers le Working_Folder, permet de travailler en chemin relatif
 int count = 0 ;
@@ -278,7 +278,7 @@ if ((maxShuttleNumber >0) || (maxProductNumber >0))
 		//Création du produit sur la plateforme 4
 		std_msgs::Int32 msg;
 		msg.data = productPointer->productNumber;
-		pubProductToTask.publish(msg);
+		pubProductInPost.publish(msg);
 		ROS_INFO("ORDO Creation produit numero %d sur plateforme" ,msg.data);
 		maxProductNumber--;
 		}
