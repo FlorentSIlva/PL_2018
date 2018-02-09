@@ -408,6 +408,22 @@ map
 aiguillages/ExchangeSh.h
 /home/projn7cellule/PL_2018/ros_ws/src/commande/src/aiguillages/ExchangeSh.h
 
+/home/projn7cellule/PL_2018/ros_ws/src/commande/src/main_commande.cpp
+capteurs.h
+/home/projn7cellule/PL_2018/ros_ws/src/commande/src/capteurs.h
+actionneurs.h
+/home/projn7cellule/PL_2018/ros_ws/src/commande/src/actionneurs.h
+commande.h
+/home/projn7cellule/PL_2018/ros_ws/src/commande/src/commande.h
+robots.h
+/home/projn7cellule/PL_2018/ros_ws/src/commande/src/robots.h
+ros/ros.h
+-
+unistd.h
+-
+shuttles/srvGetEmptyShuttles.h
+-
+
 /home/projn7cellule/PL_2018/ros_ws/src/commande/src/productPost.h
 ros/ros.h
 -

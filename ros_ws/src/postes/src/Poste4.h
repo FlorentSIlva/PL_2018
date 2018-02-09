@@ -56,6 +56,7 @@ public:
 	//  Init of the variables
 	bool PS3;	// Stop Sensor 3 
 	bool PS3_past;
+	int v;
 
 	int tache;
 	int poste_libre;

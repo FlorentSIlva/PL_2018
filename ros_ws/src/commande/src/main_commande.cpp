@@ -64,6 +64,7 @@ int main(int argc, char **argv)
 		{
 			modif=1;
 			M[313]++;
+			cmd.ReinitialiserNouveauProduit();
 		}
 
 		if(cmd.NouvelleNavette()!=0)

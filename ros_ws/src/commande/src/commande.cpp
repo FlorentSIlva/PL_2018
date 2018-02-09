@@ -634,6 +634,10 @@ void Commande::ReinitialiserNouvelleNavette()
 int Commande::NouveauProduit()
 {
 	return ProduitEnP4;
-	ROS_INFO("coucouuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
+}
+
+//Fonction permettant de réinitialiser un nouveau produit est créé sur le poste 4
+void Commande::ReinitialiserNouveauProduit()
+{
 	ProduitEnP4=0;
 }

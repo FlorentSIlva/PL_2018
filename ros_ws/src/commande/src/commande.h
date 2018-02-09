@@ -175,6 +175,7 @@ public:
 	int NavetteDisponible();//Renvoie le handle d'une navette vide dans d0
 	int NouvelleNavette(); //Renvoie le handle de la navette qui est créée par le noeud Ordonnancement
 	int NouveauProduit();//Renvoie 1 si il y a un produit sur la plateforme 4
+	void ReinitialiserNouveauProduit();
 	void ReinitialiserNouvelleNavette();//Réinitialise le handle de la navette nouvellement créée
 
 
