@@ -62,6 +62,7 @@ private:
 	ros::Subscriber subProductInPostP2;
 	ros::Subscriber subProductInPostP3;
 	ros::Subscriber subProductInPostP4;
+	ros::Subscriber subProductCreateInPostP4;
 
 
 
@@ -110,7 +111,7 @@ private:
 
 	int NavetteEnP1,NavetteEnP2,NavetteEnP3,NavetteEnP4;
 
-	int NewHandle;
+	int NewHandle,NewP4Product;
 
 	std::map<int,ProductPost*> ProductsMap;
 
@@ -158,6 +159,7 @@ public:
 	void ProductInPostP4Callback(const std_msgs::Int32::ConstPtr& msg);
 
 	void NewShuttleCallBack(const aiguillages::ExchangeSh::ConstPtr& msg);
+	void ProductCreateInPostP4Callback(const std_msgs::Int32::ConstPtr& msg);//Ecrit 1 si il y a un produit sur la plateforme 4
 
 	void initProduct(int nDestination, int pNumber);
 

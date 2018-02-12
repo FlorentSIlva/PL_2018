@@ -207,9 +207,6 @@ void Poste4::StopSensorCallback(const std_msgs::Int32::ConstPtr& msg)
 
 	if(PS3)
 	{
-		int v=1;
-		//pubEmptyShuttleReady.publish(v);
-		//pubProductInPost.publish(v);
 		if(!PS3_past)
 		{
 			PS3_past=PS3;

@@ -84,6 +84,7 @@ Commande::Commande(ros::NodeHandle noeud, std::string executionPath)
 	subProductInPostP2 = noeud.subscribe("/Cmde_P2/ProduitPresentP2", 10, &Commande::ProductInPostP2Callback, this);
 	subProductInPostP3 = noeud.subscribe("/Cmde_P3/ProduitPresentP3", 10, &Commande::ProductInPostP3Callback, this);
 	subProductInPostP4 = noeud.subscribe("/Cmde_P4/ProduitPresentP4", 10, &Commande::ProductInPostP4Callback, this);
+	subProductCreateInPostP4 = noeud.subscribe("/Cmde_P4/ProduitCreeEnP4", 10, &Commande::ProductCreateInPostP4Callback, this);
 
 
 	// Actionner ergots
@@ -125,6 +126,7 @@ Commande::Commande(ros::NodeHandle noeud, std::string executionPath)
 	NavetteEnP4=0;
 
 	NewHandle=0;
+	NewP4Product=0;
 	
 
 
@@ -631,13 +633,19 @@ void Commande::ReinitialiserNouvelleNavette()
 }
 
 //Fonction permettant de savoir si un nouveau produit est créé sur le poste 4
+void Commande::ProductCreateInPostP4Callback(const std_msgs::Int32::ConstPtr& msg)
+{
+	NewP4Product=1;
+}
+
+//Fonction permettant de savoir si un nouveau produit est créé sur le poste 4
 int Commande::NouveauProduit()
 {
-	return ProduitEnP4;
+	return NewP4Product;
 }
 
 //Fonction permettant de réinitialiser un nouveau produit est créé sur le poste 4
 void Commande::ReinitialiserNouveauProduit()
 {
-	ProduitEnP4=0;
+	NewP4Product=0;
 }

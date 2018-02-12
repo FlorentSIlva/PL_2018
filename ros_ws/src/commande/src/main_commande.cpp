@@ -612,7 +612,7 @@ int main(int argc, char **argv)
 		if(M[301]!=0 && cmd.NavetteStoppeeVide(4)!=0)
 		{
 			modif=1;
-			M[302]=cmd.NavetteStoppeeVide(4);
+			M[302]=1;
 			M[301]--;
 		}
 		
@@ -665,6 +665,7 @@ int main(int argc, char **argv)
 			M[313]=0;
 			M[314]=1;
 			M[301]=1;
+			cmd.PiecePrise(4);
 			int handle;
 			handle=cmd.NavetteDisponible();
 			cmd.DefinirDestination(handle, 4);

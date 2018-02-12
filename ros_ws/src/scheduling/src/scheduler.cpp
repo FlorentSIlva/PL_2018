@@ -27,7 +27,7 @@ bool Scheduler::init(ros::NodeHandle nh, std::string executionPath)
 	pubCreateShuttle = nh.advertise<scheduling::Msg_LoadShuttle>("/scheduling/NextProduct",10);
 	pubDelShuttle = nh.advertise<std_msgs::Int32>("/commande_navette/DelShuttle",10);
 
-	pubProductInPost= nh.advertise<std_msgs::Int32>("/Cmde_P4/ProduitPresentP4", 10);
+	pubProductInPost= nh.advertise<std_msgs::Int32>("/Cmde_P4/ProduitCreeEnP4", 10);
 
 // Récupération du chemin vers le Working_Folder, permet de travailler en chemin relatif
 int count = 0 ;
