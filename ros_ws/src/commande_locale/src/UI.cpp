@@ -16,86 +16,85 @@ int typeNextShuttle_aux;
 
 
 // Button sizes
-	int playButton_x_size = 110; // colum
-	int playButton_y_size = 25; //row
-	int pauseButton_x_size = 110; // colum
-	int pauseButton_y_size = 25; //row
-	int shuttleButton_x_size = 110; // colum
-	int shuttleButton_y_size = 25; //row
-	int modeButton_x_size = 110; // colum
-	int modeButton_y_size = 25; //row
+// Ici on defini la taille des boutons qui seront presents dans la simulation (on defini juste les tailles et non les boutons)
+
+	int playButton_x_size = 110; // colum                     	BOUTON PLAY
+	int playButton_y_size = 25; //row				BOUTON PLAY
+	int pauseButton_x_size = 110; // colum				BOUTON PAUSE
+	int pauseButton_y_size = 25; //row				BOUTON PAUSE	
+	int shuttleButton_x_size = 110; // colum			BOUTON NAVETTE
+	int shuttleButton_y_size = 25; //row				BOUTON NAVETTE
+	int modeButton_x_size = 110; // colum				BOUTON MODE
+	int modeButton_y_size = 25; //row				BOUTON MODE
+
+	int TERbutton_x_size = 110;
+	int TERbutton_y_size = 25;  
 
 // Button positions
+// Ici on defini la position des differents boutons qui seront present dans la simulation (on defini juste les position et non les boutons mêmes)
 
-	int playButton_x_0 = 400-15; // colum
-	int playButton_y_0 = 570; // row
+	int playButton_x_0 = 400-15; // colum				BOUTON PLAY
+	int playButton_y_0 = 570; // row				BOUTON PLAY
+	int pauseButton_x_0 = 550-15; // colum				BOUTON PAUSE
+	int pauseButton_y_0 = 570; // row				BOUTON PAUSE
+	int shuttleButton_x_0 = 700-15; // colum			BOUTON NAVETTE
+	int shuttleButton_y_0 = 570; // row				BOUTON NAVETTE
+	int modeButton_x_0 = 475-15; // colum				BOUTON MODE
+	int modeButton_y_0 = 570+50; // row				BOUTON MODE
 
-
-	int pauseButton_x_0 = 550-15; // colum
-	int pauseButton_y_0 = 570; // row
-
-
-	int shuttleButton_x_0 = 700-15; // colum
-	int shuttleButton_y_0 = 570; // row
-
-
-	int modeButton_x_0 = 550-15; // colum
-	int modeButton_y_0 = 570+50; // row
-
-
-
+	int TERbutton_x_0 = 625-15;
+	int TERbutton_y_0 = 570+50;
 
 // To activate and desactivate the Trackbar positions
 //bool activeProduct[7]= {true, false, false, false, false, false, false};
 
-// l'UI doit pouvoir controller la simu (Play & Pause)
+// l'UI doit pouvoir controller la simu (Play & Pause) on defini ici le constructeur de UI
 UI::UI(vrepController* VREPContrl,  Configuration* config)
 {
 	VREPController = VREPContrl;
 	configuration = config;
 }
 
-/* On actualise les aiguillages (On dessine des cercles gris, sur lequel 
-on rajoute une droite ou un arc de cercle pour afficher l'etat de l'aiguillage) */ 
+// On actualise les aiguillages (On dessine des cercles gris, sur lequel on rajoute une droite ou un arc de cercle pour afficher l'etat de l'aiguillage)  
 void UI::DrawSwitchSensorImg(commande_locale::Msg_SensorState SensorState)
 {
-	circle(imageTot, cv::Point(21+78, 241+570), 17, cv::Scalar(200,200,200), -1); //A01
-	circle(imageTot, cv::Point(270+78, 252+570), 17, cv::Scalar(200,200,200), -1); //A02
-	circle(imageTot, cv::Point(378+78, 235+570), 17, cv::Scalar(200,200,200), -1); //A03
-	circle(imageTot, cv::Point(642+78, 235+570), 17, cv::Scalar(200,200,200), -1); //A04
-	circle(imageTot, cv::Point(751+78, 252+570), 17, cv::Scalar(200,200,200), -1); //A05
-	circle(imageTot, cv::Point(1002+78, 240+570), 17, cv::Scalar(200,200,200), -1); //A06
-	circle(imageTot, cv::Point(1000+78, 126+570), 17, cv::Scalar(200,200,200), -1); //A07
-	circle(imageTot, cv::Point(752+78, 111+570), 17, cv::Scalar(200,200,200), -1); //A08
-	circle(imageTot, cv::Point(645+78, 126+570), 17, cv::Scalar(200,200,200), -1); //A09
-	circle(imageTot, cv::Point(377+78, 129+570), 17, cv::Scalar(200,200,200), -1); //A10
-	circle(imageTot, cv::Point(269+78, 112+570), 17, cv::Scalar(200,200,200), -1); //A11
-	circle(imageTot, cv::Point(22+78, 125+570), 17, cv::Scalar(200,200,200), -1); //A12
+	circle(imageTot, cv::Point(21+78, 241+570), 	17, 	cv::Scalar(200,200,200), -1); 		//A01
+	circle(imageTot, cv::Point(270+78, 252+570), 	17, 	cv::Scalar(200,200,200), -1); 		//A02
+	circle(imageTot, cv::Point(378+78, 235+570), 	17, 	cv::Scalar(200,200,200), -1); 		//A03
+	circle(imageTot, cv::Point(642+78, 235+570), 	17, 	cv::Scalar(200,200,200), -1); 		//A04
+	circle(imageTot, cv::Point(751+78, 252+570), 	17, 	cv::Scalar(200,200,200), -1); 		//A05
+	circle(imageTot, cv::Point(1002+78, 240+570), 	17, 	cv::Scalar(200,200,200), -1); 		//A06
+	circle(imageTot, cv::Point(1000+78, 126+570), 	17, 	cv::Scalar(200,200,200), -1); 		//A07
+	circle(imageTot, cv::Point(752+78, 111+570), 	17, 	cv::Scalar(200,200,200), -1); 		//A08
+	circle(imageTot, cv::Point(645+78, 126+570), 	17, 	cv::Scalar(200,200,200), -1); 		//A09
+	circle(imageTot, cv::Point(377+78, 129+570), 	17, 	cv::Scalar(200,200,200), -1); 		//A10
+	circle(imageTot, cv::Point(269+78, 112+570), 	17, 	cv::Scalar(200,200,200), -1); 		//A11
+	circle(imageTot, cv::Point(22+78, 125+570), 	17, 	cv::Scalar(200,200,200), -1); 		//A12
 
-	if(SensorState.DD[1]) line(imageTot, 	cv::Point(14+78, 227+570), 	cv::Point(14+78, 255+570), 	cv::Scalar(0,100,0), 3); //A01
+	if(SensorState.DD[1]) line(imageTot, 	cv::Point(14+78, 227+570), 	cv::Point(14+78, 255+570), 	cv::Scalar(0,100,0), 3); 	//A01
 	if(SensorState.DG[1]) ellipse(imageTot, cv::Point(37+78, 220+570),	cv::Size(23,23),0,92,163,	cv::Scalar(0,100,0), 3);
-	if(SensorState.DD[2]) ellipse(imageTot, cv::Point(290+78, 268+570),	cv::Size(23,23),0,183,255,	cv::Scalar(0,100,0), 3);//A02
+	if(SensorState.DD[2]) ellipse(imageTot, cv::Point(290+78, 268+570),	cv::Size(23,23),0,183,255,	cv::Scalar(0,100,0), 3);	//A02
 	if(SensorState.DG[2]) line(imageTot, 	cv::Point(257+78, 245+570), 	cv::Point(283+78, 245+570), 	cv::Scalar(0,100,0), 3);
-	if(SensorState.DD[3]) line(imageTot, 	cv::Point(365+78, 243+570), 	cv::Point(391+78, 243+570), 	cv::Scalar(0,100,0), 3); //A03
-	if(SensorState.DG[3]) ellipse(imageTot, cv::Point(358+78, 221+570),	cv::Size(23,23),0,73,1,cv::Scalar(0,100,0), 3);
-	if(SensorState.DD[4]) line(imageTot, 	cv::Point(629+78, 243+570), 	cv::Point(655+78, 243+570), cv::Scalar(0,100,0), 3); //A04
-	if(SensorState.DG[4]) ellipse(imageTot, cv::Point(665+78, 220+570),	cv::Size(23,23),0,113,181,cv::Scalar(0,100,0), 3);
-	if(SensorState.DD[5]) ellipse(imageTot, cv::Point(732+78, 265+570),	cv::Size(23,23),0,284,363,cv::Scalar(0,100,0), 3);//A05
-	if(SensorState.DG[5]) line(imageTot, 	cv::Point(738+78, 245+570), 	cv::Point(764+78, 245+570), cv::Scalar(0,100,0), 3); 
-	if(SensorState.DD[6]) line(imageTot, 	cv::Point(1008+78, 226+570), 	cv::Point(1008+78, 253+570), cv::Scalar(0,100,0), 3); //A06
-	if(SensorState.DG[6]) ellipse(imageTot, cv::Point(985+78, 221+570),	cv::Size(23,23),0,83,12,cv::Scalar(0,100,0), 3);
-	if(SensorState.DD[7]) line(imageTot, 	cv::Point(1008+78, 113+570), 	cv::Point(1008+78, 139+570), cv::Scalar(0,100,0), 3); //A07
-	if(SensorState.DG[7]) ellipse(imageTot, cv::Point(985+78, 145+570),	cv::Size(23,23),0,271,348,cv::Scalar(0,100,0), 3);
-	if(SensorState.DD[8]) ellipse(imageTot, cv::Point(733+78, 96+570),	cv::Size(23,23),0,75,3,cv::Scalar(0,100,0), 3);//A08
-	if(SensorState.DG[8]) line(imageTot, 	cv::Point(740+78, 121+570), 	cv::Point(764+78, 121+570), cv::Scalar(0,100,0), 3); 
-	if(SensorState.DD[9]) line(imageTot, 	cv::Point(631+78, 121+570), 	cv::Point(659+78, 121+570), cv::Scalar(0,100,0), 3); //A09
-	if(SensorState.DG[9]) ellipse(imageTot, cv::Point(665+78, 143+570),	cv::Size(23,23),0,184,256,cv::Scalar(0,100,0), 3);
-	if(SensorState.DD[10]) line(imageTot, 	cv::Point(363+78, 122+570), 	cv::Point(390+78, 122+570), cv::Scalar(0,100,0), 3); //A10
-	if(SensorState.DG[10]) ellipse(imageTot,cv::Point(358+78, 144+570),	cv::Size(23,23),0,282,357,cv::Scalar(0,100,0), 3);
-	if(SensorState.DD[11]) ellipse(imageTot,cv::Point(290+78, 98+570),	cv::Size(23,23),0,110,183,cv::Scalar(0,100,0), 3); //A11
-	if(SensorState.DG[11]) line(imageTot, 	cv::Point(257+78, 121+570), 	cv::Point(281+78, 121+570), cv::Scalar(0,100,0), 3);
-	if(SensorState.DD[12]) line(imageTot, 	cv::Point(14+78, 112+570), 	cv::Point(14+78 , 138+570), cv::Scalar(0,100,0), 3); //A12
-	if(SensorState.DG[12]) ellipse(imageTot,cv::Point(38+78, 145+570),	cv::Size(23,23),0,194,268,cv::Scalar(0,100,0), 3);
+	if(SensorState.DD[3]) line(imageTot, 	cv::Point(365+78, 243+570), 	cv::Point(391+78, 243+570), 	cv::Scalar(0,100,0), 3); 	//A03
+	if(SensorState.DG[3]) ellipse(imageTot, cv::Point(358+78, 221+570),	cv::Size(23,23),0,73,1,		cv::Scalar(0,100,0), 3);
+	if(SensorState.DD[4]) line(imageTot, 	cv::Point(629+78, 243+570), 	cv::Point(655+78, 243+570), 	cv::Scalar(0,100,0), 3); 	//A04
+	if(SensorState.DG[4]) ellipse(imageTot, cv::Point(665+78, 220+570),	cv::Size(23,23),0,113,181,	cv::Scalar(0,100,0), 3);
+	if(SensorState.DD[5]) ellipse(imageTot, cv::Point(732+78, 265+570),	cv::Size(23,23),0,284,363,	cv::Scalar(0,100,0), 3);	//A05
+	if(SensorState.DG[5]) line(imageTot, 	cv::Point(738+78, 245+570), 	cv::Point(764+78, 245+570), 	cv::Scalar(0,100,0), 3); 
+	if(SensorState.DD[6]) line(imageTot, 	cv::Point(1008+78, 226+570), 	cv::Point(1008+78, 253+570), 	cv::Scalar(0,100,0), 3);	//A06
+	if(SensorState.DG[6]) ellipse(imageTot, cv::Point(985+78, 221+570),	cv::Size(23,23),0,83,12,	cv::Scalar(0,100,0), 3);
+	if(SensorState.DD[7]) line(imageTot, 	cv::Point(1008+78, 113+570), 	cv::Point(1008+78, 139+570), 	cv::Scalar(0,100,0), 3); 	//A07
+	if(SensorState.DG[7]) ellipse(imageTot, cv::Point(985+78, 145+570),	cv::Size(23,23),0,271,348,	cv::Scalar(0,100,0), 3);
+	if(SensorState.DD[8]) ellipse(imageTot, cv::Point(733+78, 96+570),	cv::Size(23,23),0,75,3,		cv::Scalar(0,100,0), 3);	//A08
+	if(SensorState.DG[8]) line(imageTot, 	cv::Point(740+78, 121+570), 	cv::Point(764+78, 121+570), 	cv::Scalar(0,100,0), 3); 
+	if(SensorState.DD[9]) line(imageTot, 	cv::Point(631+78, 121+570), 	cv::Point(659+78, 121+570), 	cv::Scalar(0,100,0), 3); 	//A09
+	if(SensorState.DG[9]) ellipse(imageTot, cv::Point(665+78, 143+570),	cv::Size(23,23),0,184,256,	cv::Scalar(0,100,0), 3);
+	if(SensorState.DD[10]) line(imageTot, 	cv::Point(363+78, 122+570), 	cv::Point(390+78, 122+570), 	cv::Scalar(0,100,0), 3); 	//A10
+	if(SensorState.DG[10]) ellipse(imageTot,cv::Point(358+78, 144+570),	cv::Size(23,23),0,282,357,	cv::Scalar(0,100,0), 3);
+	if(SensorState.DD[11]) ellipse(imageTot,cv::Point(290+78, 98+570),	cv::Size(23,23),0,110,183,	cv::Scalar(0,100,0), 3); 	//A11
+	if(SensorState.DG[11]) line(imageTot, 	cv::Point(257+78, 121+570), 	cv::Point(281+78, 121+570), 	cv::Scalar(0,100,0), 3);
+	if(SensorState.DD[12]) line(imageTot, 	cv::Point(14+78, 112+570), 	cv::Point(14+78 , 138+570), 	cv::Scalar(0,100,0), 3); 	//A12
+	if(SensorState.DG[12]) ellipse(imageTot,cv::Point(38+78, 145+570),	cv::Size(23,23),0,194,268,	cv::Scalar(0,100,0), 3);
 
 	update();
 }
@@ -347,13 +346,15 @@ void UI::init(ros::NodeHandle nh){
 	std::string path_RandomButton 	= ros::package::getPath("commande_locale") + "/img/RandomButton.png";
 	std::string path_RandomButton_On = ros::package::getPath("commande_locale") + "/img/RandomButton_On.png";
 
+	// 6) TER button
+	std::string path_TERbutton = ros::package::getPath("commande_locale") + "/img/TERbutton.png";
+
 
 // Upload of the images to the internal variables
 	imageSensor = cv::imread(path_ImageSensor,CV_LOAD_IMAGE_COLOR);
 	imageSimu = cv::Mat::zeros(512, 1024, CV_8UC3 );
 	imageTot = cv::Mat::zeros(950, 1180, CV_8UC3 );
 	imageTot.setTo(cv::Scalar(200,200,200));
-
 
 	playButton = cv::imread(	path_PlayButton,	CV_LOAD_IMAGE_COLOR);
 	playButton_Down = cv::imread(	path_PlayButton_Down,	CV_LOAD_IMAGE_COLOR);
@@ -375,6 +376,8 @@ void UI::init(ros::NodeHandle nh){
 	modeManuButton_On = cv::imread(	path_ManualButton_On,	CV_LOAD_IMAGE_COLOR);
 	modeRandButton = cv::imread(	path_RandomButton,	CV_LOAD_IMAGE_COLOR);
 	modeRandButton_On = cv::imread(	path_RandomButton_On,	CV_LOAD_IMAGE_COLOR);
+
+	TERbutton = cv::imread(		path_TERbutton,		CV_LOAD_IMAGE_COLOR);
 
 // Check for invalid input in the images
 	if(! imageSensor.data )		{std::cout <<  "Could not open or find the image 'Schema_cellule.png'" << std::endl ;}
@@ -401,6 +404,8 @@ void UI::init(ros::NodeHandle nh){
 	if(! modeRandButton.data )	{std::cout <<  "Could not open or find the image 'ModeRandButton.png'" << std::endl ;}
 	if(! modeRandButton_On.data )	{std::cout <<  "Could not open or find the image 'ModeRandButton_On.png'" << std::endl ;}
 
+	if(! TERbutton.data ) 		{std::cout <<  "Could not open or find the image 'TERbutton.png'"<< std::endl ;}
+
 	// Initialisation of the sensor background image
 	imageSensor.copyTo(imageTot.rowRange(570,936).colRange(78,1102));
 
@@ -410,6 +415,7 @@ void UI::init(ros::NodeHandle nh){
 	pauseButton_Down.copyTo(imageTot.rowRange(pauseButton_y_0,pauseButton_y_0+pauseButton_y_size).colRange(pauseButton_x_0,pauseButton_x_0+pauseButton_x_size));	
 	shuttleButton_Down.copyTo(imageTot.rowRange(shuttleButton_y_0,shuttleButton_y_0+shuttleButton_y_size).colRange(shuttleButton_x_0,shuttleButton_x_0+shuttleButton_x_size));
 	modeButton.copyTo(imageTot.rowRange(modeButton_y_0,modeButton_y_0+modeButton_y_size).colRange(modeButton_x_0,modeButton_x_0+modeButton_x_size));
+	TERbutton.copyTo(imageTot.rowRange(TERbutton_y_0,TERbutton_y_0+TERbutton_y_size).colRange(TERbutton_x_0,TERbutton_x_0+TERbutton_x_size));
  
 	// Window
 	cv::namedWindow("Simulation", 7);

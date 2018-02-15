@@ -53,7 +53,8 @@ class UI
 		cv::Mat modeManuButton_On;
 		cv::Mat modeAutoButton;
 		cv::Mat modeAutoButton_On;
-
+		
+		cv::Mat TERbutton;
 
 		int mode;
 		int modeShuttle;
@@ -64,11 +65,11 @@ class UI
 		ros::Publisher pubStateButton;
 
 	public:
-		UI(vrepController* VREPContrl, Configuration* config);
-		void DrawRailSensorImg(commande_locale::Msg_SensorState SensorState);
-		void DrawStopSensorImg(commande_locale::Msg_SensorState SensorState);
-		void DrawStationSensorImg(commande_locale::Msg_SensorState SensorState);
-		void DrawSwitchSensorImg(commande_locale::Msg_SensorState SensorState);
+		UI(vrepController* VREPContrl, Configuration* config);    
+		void DrawRailSensorImg(commande_locale::Msg_SensorState SensorState);			// Gere l'affichage de l'état 
+		void DrawStopSensorImg(commande_locale::Msg_SensorState SensorState);			// Gere l'affichage de l'état des capteurs des stops
+		void DrawStationSensorImg(commande_locale::Msg_SensorState SensorState);		// Gere l'affichage de l'etat des capteurs des stations de travail
+		void DrawSwitchSensorImg(commande_locale::Msg_SensorState SensorState);			// Gere l'affichage de l'etat des aiguillage
 		void init(ros::NodeHandle nh);
 		void update();
 		void getSimuStream(const sensor_msgs::ImageConstPtr& msg);
