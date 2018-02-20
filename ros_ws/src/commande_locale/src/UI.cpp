@@ -18,32 +18,32 @@ int typeNextShuttle_aux;
 // Button sizes
 // Ici on defini la taille des boutons qui seront presents dans la simulation (on defini juste les tailles et non les boutons)
 
-	int playButton_x_size = 110; // colum                     	BOUTON PLAY
-	int playButton_y_size = 25; //row				BOUTON PLAY
-	int pauseButton_x_size = 110; // colum				BOUTON PAUSE
-	int pauseButton_y_size = 25; //row				BOUTON PAUSE	
+	int playButton_x_size = 110; 	// colum                     	BOUTON PLAY
+	int playButton_y_size = 25; 	// row				BOUTON PLAY
+	int pauseButton_x_size = 110; 	// colum			BOUTON PAUSE
+	int pauseButton_y_size = 25; 	// row				BOUTON PAUSE	
 	int shuttleButton_x_size = 110; // colum			BOUTON NAVETTE
-	int shuttleButton_y_size = 25; //row				BOUTON NAVETTE
-	int modeButton_x_size = 110; // colum				BOUTON MODE
-	int modeButton_y_size = 25; //row				BOUTON MODE
+	int shuttleButton_y_size = 25; 	// row				BOUTON NAVETTE
+	int modeButton_x_size = 110; 	// colum			BOUTON MODE
+	int modeButton_y_size = 25; 	// row				BOUTON MODE
 
-	int TERbutton_x_size = 110;
-	int TERbutton_y_size = 25;  
+	int TERbutton_x_size = 110; 	// colum			BOUTON TER
+	int TERbutton_y_size = 25;  	// row				BOUTON TER
 
 // Button positions
 // Ici on defini la position des differents boutons qui seront present dans la simulation (on defini juste les position et non les boutons mêmes)
 
-	int playButton_x_0 = 400-15; // colum				BOUTON PLAY
-	int playButton_y_0 = 570; // row				BOUTON PLAY
-	int pauseButton_x_0 = 550-15; // colum				BOUTON PAUSE
-	int pauseButton_y_0 = 570; // row				BOUTON PAUSE
+	int playButton_x_0 = 400-15; 	// colum			BOUTON PLAY
+	int playButton_y_0 = 570;	// row				BOUTON PLAY
+	int pauseButton_x_0 = 550-15; 	// colum			BOUTON PAUSE
+	int pauseButton_y_0 = 570; 	// row				BOUTON PAUSE
 	int shuttleButton_x_0 = 700-15; // colum			BOUTON NAVETTE
-	int shuttleButton_y_0 = 570; // row				BOUTON NAVETTE
-	int modeButton_x_0 = 475-15; // colum				BOUTON MODE
-	int modeButton_y_0 = 570+50; // row				BOUTON MODE
+	int shuttleButton_y_0 = 570; 	// row				BOUTON NAVETTE
+	int modeButton_x_0 = 475-15; 	// colum			BOUTON MODE
+	int modeButton_y_0 = 570+50; 	// row				BOUTON MODE
 
-	int TERbutton_x_0 = 625-15;
-	int TERbutton_y_0 = 570+50;
+	int TERbutton_x_0 = 625-15;	// colum			BOUTON TER
+	int TERbutton_y_0 = 570+50;	// row 				BOUTON TER
 
 // To activate and desactivate the Trackbar positions
 //bool activeProduct[7]= {true, false, false, false, false, false, false};
@@ -102,14 +102,14 @@ void UI::DrawSwitchSensorImg(commande_locale::Msg_SensorState SensorState)
 // On actualise l'etat des capteurs des stations de travail (cercle rouge ou vert)
 void UI::DrawStationSensorImg(commande_locale::Msg_SensorState SensorState)
 {
-    circle(imageTot, cv::Point(88+78, 345+570), 5, cv::Scalar(0,255*SensorState.CPI[1],255-255*SensorState.CPI[1]), -1, 8 );
-    circle(imageTot, cv::Point(172+78, 345+570), 5, cv::Scalar(0,255*SensorState.CPI[2],255-255*SensorState.CPI[2]), -1, 8 );
-    circle(imageTot, cv::Point(860+78, 344+570), 5, cv::Scalar(0,255*SensorState.CPI[3],255-255*SensorState.CPI[3]), -1, 8 );
-    circle(imageTot, cv::Point(945+78, 346+570), 5, cv::Scalar(0,255*SensorState.CPI[4],255-255*SensorState.CPI[4]), -1, 8 );
-    circle(imageTot, cv::Point(908+78, 22+570), 5, cv::Scalar(0,255*SensorState.CPI[5],255-255*SensorState.CPI[5]), -1, 8 );
-    circle(imageTot, cv::Point(825+78, 22+570), 5, cv::Scalar(0,255*SensorState.CPI[6],255-255*SensorState.CPI[6]), -1, 8 );
-    circle(imageTot, cv::Point(169+78, 20+570), 5, cv::Scalar(0,255*SensorState.CPI[7],255-255*SensorState.CPI[7]), -1, 8 );
-    circle(imageTot, cv::Point(83+78, 20+570), 5, cv::Scalar(0,255*SensorState.CPI[8],255-255*SensorState.CPI[8]), -1, 8 );
+    	circle(imageTot, cv::Point(88+78, 345+570), 5, cv::Scalar(0,255*SensorState.CPI[1],255-255*SensorState.CPI[1]), -1, 8 );
+    	circle(imageTot, cv::Point(172+78, 345+570), 5, cv::Scalar(0,255*SensorState.CPI[2],255-255*SensorState.CPI[2]), -1, 8 );
+    	circle(imageTot, cv::Point(860+78, 344+570), 5, cv::Scalar(0,255*SensorState.CPI[3],255-255*SensorState.CPI[3]), -1, 8 );
+    	circle(imageTot, cv::Point(945+78, 346+570), 5, cv::Scalar(0,255*SensorState.CPI[4],255-255*SensorState.CPI[4]), -1, 8 );
+    	circle(imageTot, cv::Point(908+78, 22+570), 5, cv::Scalar(0,255*SensorState.CPI[5],255-255*SensorState.CPI[5]), -1, 8 );
+    	circle(imageTot, cv::Point(825+78, 22+570), 5, cv::Scalar(0,255*SensorState.CPI[6],255-255*SensorState.CPI[6]), -1, 8 );
+    	circle(imageTot, cv::Point(169+78, 20+570), 5, cv::Scalar(0,255*SensorState.CPI[7],255-255*SensorState.CPI[7]), -1, 8 );
+    	circle(imageTot, cv::Point(83+78, 20+570), 5, cv::Scalar(0,255*SensorState.CPI[8],255-255*SensorState.CPI[8]), -1, 8 );
 
 	update();
 }
@@ -134,30 +134,30 @@ void UI::DrawRailSensorImg(commande_locale::Msg_SensorState SensorState)
 // On actualise l'etat des capteurs des stops (cercle rouge ou vert)
 void UI::DrawStopSensorImg(commande_locale::Msg_SensorState SensorState)
 {
-    circle(imageTot, cv::Point(27+78, 181+570), 5, cv::Scalar(0,255*SensorState.PS[1],255-255*SensorState.PS[1]), -1, 8 );
-    circle(imageTot, cv::Point(115+78, 345+570), 5, cv::Scalar(0,255*SensorState.PS[2],255-255*SensorState.PS[2]), -1, 8 );
-    circle(imageTot, cv::Point(198+78, 345+570), 5, cv::Scalar(0,255*SensorState.PS[3],255-255*SensorState.PS[3]), -1, 8 );
-    circle(imageTot, cv::Point(241+78, 230+570), 5, cv::Scalar(0,255*SensorState.PS[4],255-255*SensorState.PS[4]), -1, 8 );
-    circle(imageTot, cv::Point(248+78, 342+570), 5, cv::Scalar(0,255*SensorState.PS[5],255-255*SensorState.PS[5]), -1, 8 );
-    circle(imageTot, cv::Point(326+78, 230+570), 5, cv::Scalar(0,255*SensorState.PS[6],255-255*SensorState.PS[6]), -1, 8 );
-    circle(imageTot, cv::Point(572+78, 231+570), 5, cv::Scalar(0,255*SensorState.PS[7],255-255*SensorState.PS[7]), -1, 8 );
-    circle(imageTot, cv::Point(700+78, 231+570), 5, cv::Scalar(0,255*SensorState.PS[8],255-255*SensorState.PS[8]), -1, 8 );
-    circle(imageTot, cv::Point(834+78, 345+570), 5, cv::Scalar(0,255*SensorState.PS[9],255-255*SensorState.PS[9]), -1, 8 );
-    circle(imageTot, cv::Point(922+78, 347+570), 5, cv::Scalar(0,255*SensorState.PS[10],255-255*SensorState.PS[10]), -1, 8 );
-    circle(imageTot, cv::Point(934+78, 232+570), 5, cv::Scalar(0,255*SensorState.PS[11],255-255*SensorState.PS[11]), -1, 8 );
-    circle(imageTot, cv::Point(992+78, 339+570), 5, cv::Scalar(0,255*SensorState.PS[12],255-255*SensorState.PS[12]), -1, 8 );
-    circle(imageTot, cv::Point(995+78, 189+570),5, cv::Scalar(0,255*SensorState.PS[13],255-255*SensorState.PS[13]), -1, 8 );
-    circle(imageTot, cv::Point(934+78, 21+570), 5, cv::Scalar(0,255*SensorState.PS[14],255-255*SensorState.PS[14]), -1, 8 );
-    circle(imageTot, cv::Point(852+78, 22+570), 5, cv::Scalar(0,255*SensorState.PS[15],255-255*SensorState.PS[15]), -1, 8 );
-    circle(imageTot, cv::Point(783+78, 135+570), 5, cv::Scalar(0,255*SensorState.PS[16],255-255*SensorState.PS[16]), -1, 8 );
-    circle(imageTot, cv::Point(770+78, 28+570), 5, cv::Scalar(0,255*SensorState.PS[17],255-255*SensorState.PS[17]), -1, 8 );
-    circle(imageTot, cv::Point(701+78, 136+570), 5, cv::Scalar(0,255*SensorState.PS[18],255-255*SensorState.PS[18]), -1, 8 );
-    circle(imageTot, cv::Point(454+78, 135+570), 5, cv::Scalar(0,255*SensorState.PS[19],255-255*SensorState.PS[19]), -1, 8 );
-    circle(imageTot, cv::Point(321+78, 135+570), 5, cv::Scalar(0,255*SensorState.PS[20],255-255*SensorState.PS[20]), -1, 8 );
-    circle(imageTot, cv::Point(195+78, 20+570), 5, cv::Scalar(0,255*SensorState.PS[21],255-255*SensorState.PS[21]), -1, 8 );
-    circle(imageTot, cv::Point(109+78, 20+570), 5, cv::Scalar(0,255*SensorState.PS[22],255-255*SensorState.PS[22]), -1, 8 );
-    circle(imageTot, cv::Point(66+78, 135+570), 5, cv::Scalar(0,255*SensorState.PS[23],255-255*SensorState.PS[23]), -1, 8 );
-    circle(imageTot, cv::Point(29+78, 26+570), 5, cv::Scalar(0,255*SensorState.PS[24],255-255*SensorState.PS[24]), -1, 8 );
+    	circle(imageTot, cv::Point(27+78, 181+570), 	5, 	cv::Scalar(0,255*SensorState.PS[1],255-255*SensorState.PS[1]), 	-1, 8 );
+   	circle(imageTot, cv::Point(115+78, 345+570),	5, 	cv::Scalar(0,255*SensorState.PS[2],255-255*SensorState.PS[2]), 	-1, 8 );
+    	circle(imageTot, cv::Point(198+78, 345+570),	5, 	cv::Scalar(0,255*SensorState.PS[3],255-255*SensorState.PS[3]), 	-1, 8 );
+    	circle(imageTot, cv::Point(241+78, 230+570), 	5, 	cv::Scalar(0,255*SensorState.PS[4],255-255*SensorState.PS[4]), 	-1, 8 );
+    	circle(imageTot, cv::Point(248+78, 342+570), 	5, 	cv::Scalar(0,255*SensorState.PS[5],255-255*SensorState.PS[5]), 	-1, 8 );
+    	circle(imageTot, cv::Point(326+78, 230+570), 	5, 	cv::Scalar(0,255*SensorState.PS[6],255-255*SensorState.PS[6]), 	-1, 8 );
+    	circle(imageTot, cv::Point(572+78, 231+570), 	5, 	cv::Scalar(0,255*SensorState.PS[7],255-255*SensorState.PS[7]), 	-1, 8 );
+    	circle(imageTot, cv::Point(700+78, 231+570), 	5, 	cv::Scalar(0,255*SensorState.PS[8],255-255*SensorState.PS[8]), 	-1, 8 );
+    	circle(imageTot, cv::Point(834+78, 345+570), 	5, 	cv::Scalar(0,255*SensorState.PS[9],255-255*SensorState.PS[9]), 	-1, 8 );
+    	circle(imageTot, cv::Point(922+78, 347+570), 	5, 	cv::Scalar(0,255*SensorState.PS[10],255-255*SensorState.PS[10]),-1, 8 );
+    	circle(imageTot, cv::Point(934+78, 232+570), 	5, 	cv::Scalar(0,255*SensorState.PS[11],255-255*SensorState.PS[11]),-1, 8 );
+    	circle(imageTot, cv::Point(992+78, 339+570), 	5, 	cv::Scalar(0,255*SensorState.PS[12],255-255*SensorState.PS[12]),-1, 8 );
+    	circle(imageTot, cv::Point(995+78, 189+570),	5, 	cv::Scalar(0,255*SensorState.PS[13],255-255*SensorState.PS[13]),-1, 8 );
+    	circle(imageTot, cv::Point(934+78, 21+570), 	5, 	cv::Scalar(0,255*SensorState.PS[14],255-255*SensorState.PS[14]),-1, 8 );
+    	circle(imageTot, cv::Point(852+78, 22+570), 	5, 	cv::Scalar(0,255*SensorState.PS[15],255-255*SensorState.PS[15]),-1, 8 );
+    	circle(imageTot, cv::Point(783+78, 135+570), 	5, 	cv::Scalar(0,255*SensorState.PS[16],255-255*SensorState.PS[16]),-1, 8 );
+    	circle(imageTot, cv::Point(770+78, 28+570), 	5, 	cv::Scalar(0,255*SensorState.PS[17],255-255*SensorState.PS[17]),-1, 8 );
+    	circle(imageTot, cv::Point(701+78, 136+570), 	5, 	cv::Scalar(0,255*SensorState.PS[18],255-255*SensorState.PS[18]),-1, 8 );
+    	circle(imageTot, cv::Point(454+78, 135+570), 	5, 	cv::Scalar(0,255*SensorState.PS[19],255-255*SensorState.PS[19]),-1, 8 );
+    	circle(imageTot, cv::Point(321+78, 135+570), 	5, 	cv::Scalar(0,255*SensorState.PS[20],255-255*SensorState.PS[20]),-1, 8 );
+    	circle(imageTot, cv::Point(195+78, 20+570), 	5, 	cv::Scalar(0,255*SensorState.PS[21],255-255*SensorState.PS[21]),-1, 8 );
+    	circle(imageTot, cv::Point(109+78, 20+570), 	5, 	cv::Scalar(0,255*SensorState.PS[22],255-255*SensorState.PS[22]),-1, 8 );
+    	circle(imageTot, cv::Point(66+78, 135+570), 	5, 	cv::Scalar(0,255*SensorState.PS[23],255-255*SensorState.PS[23]),-1, 8 );
+    	circle(imageTot, cv::Point(29+78, 26+570), 	5, 	cv::Scalar(0,255*SensorState.PS[24],255-255*SensorState.PS[24]),-1, 8 );
 
     	update();
 
@@ -166,6 +166,7 @@ void UI::DrawStopSensorImg(commande_locale::Msg_SensorState SensorState)
 // On intègre le stream de la simu et l'état des capteurs et aiguillage dans l'UI
 void UI::update()
 {
+	//imageSimu.copyTo(imageTot.rowRange(294-128,294+128).colRange(590-256,590+256));
 	imageSimu.copyTo(imageTot.rowRange(18+20,530+20).colRange(78,1102));
  	//imageSensor.copyTo(imageTot.rowRange(570,936).colRange(78,1102));
 
@@ -215,13 +216,13 @@ void UI::onMouse_internal( int event, int x, int y)
    		if(y>playButton_y_0 && y < playButton_y_0+playButton_y_size && x>playButton_x_0 && x < playButton_x_0 + playButton_x_size && mode!= 1) {
 					playButton_Down.copyTo(imageTot.rowRange(playButton_y_0,playButton_y_0+playButton_y_size).colRange(playButton_x_0,playButton_x_0+playButton_x_size));
 					pauseButton.copyTo(imageTot.rowRange(pauseButton_y_0,pauseButton_y_0+pauseButton_y_size).colRange(pauseButton_x_0,pauseButton_x_0+pauseButton_x_size));
-					VREPController->play();
+					VREPController->play();  //On lance la simu si on clique sur le bouton play
 					mode = 1; }
     		else if(y>pauseButton_y_0 && y < pauseButton_y_0+pauseButton_y_size && x>pauseButton_x_0 && x < pauseButton_x_0 + pauseButton_x_size  && mode !=0) {
 					playButton.copyTo(imageTot.rowRange(playButton_y_0,playButton_y_0+playButton_y_size).colRange(playButton_x_0,playButton_x_0+playButton_x_size));
 					pauseButton_Down.copyTo(imageTot.rowRange(pauseButton_y_0,pauseButton_y_0+pauseButton_y_size).colRange(pauseButton_x_0,pauseButton_x_0+pauseButton_x_size));
 					shuttleButton_Down.copyTo(imageTot.rowRange(shuttleButton_y_0,shuttleButton_y_0+shuttleButton_y_size).colRange(shuttleButton_x_0,shuttleButton_x_0+shuttleButton_x_size));
-					VREPController->pause();
+					VREPController->pause(); // On met la simu en pause si on clique sur le bouton pause
 					mode = 0; }
 		else if(y>shuttleButton_y_0 && y < shuttleButton_y_0+shuttleButton_y_size && x>shuttleButton_x_0 && x < shuttleButton_x_0 + shuttleButton_x_size && mode!= 0 && modeShuttle !=1 && modeShuttle !=0) {
 					shuttleButton_Down.copyTo(imageTot.rowRange(shuttleButton_y_0,shuttleButton_y_0+shuttleButton_y_size).colRange(shuttleButton_x_0,shuttleButton_x_0+shuttleButton_x_size));
@@ -315,7 +316,7 @@ static void onChangeTrackbar(int, void*){
 }
 
 
-void UI::init(ros::NodeHandle nh){
+void UI::init(ros::NodeHandle nh){   // Fonction d'initialisation de l'ui 
 
 // Search of the images for the GUI
 	// 1) Sensor image
@@ -353,6 +354,7 @@ void UI::init(ros::NodeHandle nh){
 // Upload of the images to the internal variables
 	imageSensor = cv::imread(path_ImageSensor,CV_LOAD_IMAGE_COLOR);
 	imageSimu = cv::Mat::zeros(512, 1024, CV_8UC3 );
+	//imageSimu = cv::Mat::zeros(256, 512, CV_8UC3);
 	imageTot = cv::Mat::zeros(950, 1180, CV_8UC3 );
 	imageTot.setTo(cv::Scalar(200,200,200));
 
