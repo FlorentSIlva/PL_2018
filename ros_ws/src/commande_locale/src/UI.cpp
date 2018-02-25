@@ -264,9 +264,12 @@ void UI::onMouse_internal( int event, int x, int y)
 				std_msgs::Bool modeMsg;
 				modeMsg.data = true;
 				pubStateButton.publish(modeMsg);
-		}		
-		
-
+		}
+		else if(y>TERbutton_y_0 && y < TERbutton_y_0+TERbutton_y_size && x>TERbutton_x_0 && x < TERbutton_x_0+TERbutton_x_size && modeTER == 0)
+		{
+				TERbutton_on.copyTo(imageTot.rowRange(TERbutton_y_0,TERbutton_y_0+TERbutton_y_size).colRange(TERbutton_x_0,TERbutton_x_0+TERbutton_x_size));
+				modeTER = 1;
+		}	
 		
 		break;
 
@@ -303,7 +306,10 @@ void UI::onMouse_internal( int event, int x, int y)
 					modeRandButton_On.copyTo(imageTot.rowRange(modeButton_y_0,modeButton_y_0+modeButton_y_size).colRange(modeButton_x_0,modeButton_x_0+modeButton_x_size));
 				else if (modeShuttle == 3 && mode !=1)
 					modeRandButton.copyTo(imageTot.rowRange(modeButton_y_0,modeButton_y_0+modeButton_y_size).colRange(modeButton_x_0,modeButton_x_0+modeButton_x_size));
-				
+		if(y>TERbutton_y_0 && y < TERbutton_y_0+TERbutton_y_size && x>TERbutton_x_0 && x < TERbutton_x_0+TERbutton_x_size && modeTER == 0)
+					TERbutton_down.copyTo(imageTot.rowRange(TERbutton_y_0,TERbutton_y_0+TERbutton_y_size).colRange(TERbutton_x_0,TERbutton_x_0+TERbutton_x_size));
+				else if (modeTER == 0)
+					TERbutton.copyTo(imageTot.rowRange(TERbutton_y_0,TERbutton_y_0+TERbutton_y_size).colRange(TERbutton_x_0,TERbutton_x_0+TERbutton_x_size));
 			
 		break;
 	}
@@ -349,6 +355,8 @@ void UI::init(ros::NodeHandle nh){   // Fonction d'initialisation de l'ui
 
 	// 6) TER button
 	std::string path_TERbutton = ros::package::getPath("commande_locale") + "/img/TERbutton.png";
+	std::string path_TERbutton_down = ros::package::getPath("commande_locale") + "/img/TERbutton_down.png";
+	std::string path_TERbutton_on = ros::package::getPath("commande_locale") + "/img/TERbutton_on.png";
 
 
 // Upload of the images to the internal variables
@@ -380,6 +388,8 @@ void UI::init(ros::NodeHandle nh){   // Fonction d'initialisation de l'ui
 	modeRandButton_On = cv::imread(	path_RandomButton_On,	CV_LOAD_IMAGE_COLOR);
 
 	TERbutton = cv::imread(		path_TERbutton,		CV_LOAD_IMAGE_COLOR);
+	TERbutton_down = cv::imread(	path_TERbutton_down,	CV_LOAD_IMAGE_COLOR);
+	TERbutton_on = cv::imread(	path_TERbutton_on,	CV_LOAD_IMAGE_COLOR);
 
 // Check for invalid input in the images
 	if(! imageSensor.data )		{std::cout <<  "Could not open or find the image 'Schema_cellule.png'" << std::endl ;}
@@ -407,6 +417,8 @@ void UI::init(ros::NodeHandle nh){   // Fonction d'initialisation de l'ui
 	if(! modeRandButton_On.data )	{std::cout <<  "Could not open or find the image 'ModeRandButton_On.png'" << std::endl ;}
 
 	if(! TERbutton.data ) 		{std::cout <<  "Could not open or find the image 'TERbutton.png'"<< std::endl ;}
+	if(! TERbutton_down.data ) 		{std::cout <<  "Could not open or find the image 'TERbutton_down.png'"<< std::endl ;}
+	if(! TERbutton_on.data ) 		{std::cout <<  "Could not open or find the image 'TERbutton_on.png'"<< std::endl ;}
 
 	// Initialisation of the sensor background image
 	imageSensor.copyTo(imageTot.rowRange(570,936).colRange(78,1102));
@@ -448,6 +460,7 @@ void UI::init(ros::NodeHandle nh){   // Fonction d'initialisation de l'ui
 
 	mode = 0; // Mode 0 : Pause - Mode 1 : Play
 	modeShuttle = 0;
+	modeTER = 0;
 }
 
 

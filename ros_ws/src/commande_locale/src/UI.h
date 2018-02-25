@@ -55,11 +55,12 @@ class UI
 		cv::Mat modeAutoButton_On;		// Bouton mode auto appuyé 
 		
 		cv::Mat TERbutton;			// Bouton TER 
-		cv::Mat TERbutton_Down;			// Bouton TER appuyé
-		cv::Mat TERbuton_On;			// Bouton TER lorsque la souris passe dessus 
+		cv::Mat TERbutton_down;			// Bouton TER appuyé
+		cv::Mat TERbutton_on;			// Bouton TER lorsque la souris passe dessus 
 
 		int mode;				// Variable contenant l'état de la simu 0 = pause, 1 = play
 		int modeShuttle;
+		int modeTER;
 		
 		int typeNextShuttle; 
 

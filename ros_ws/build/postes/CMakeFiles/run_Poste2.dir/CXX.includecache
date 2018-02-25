@@ -334,6 +334,12 @@ Poste2.h
 std_msgs/Int32.h
 -
 
+/home/projn7cellule/PL_2018/ros_ws/src/postes/src/productPost.cpp
+ros/ros.h
+-
+productPost.h
+/home/projn7cellule/PL_2018/ros_ws/src/postes/src/productPost.h
+
 /home/projn7cellule/PL_2018/ros_ws/src/postes/src/productPost.h
 ros/ros.h
 -

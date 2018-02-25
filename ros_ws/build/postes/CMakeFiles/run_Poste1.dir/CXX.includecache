@@ -276,6 +276,10 @@ ros/message_operations.h
 std_msgs/Header.h
 -
 
+/home/projn7cellule/PL_2018/ros_ws/src/postes/src/Poste1.cpp
+Poste1.h
+/home/projn7cellule/PL_2018/ros_ws/src/postes/src/Poste1.h
+
 /home/projn7cellule/PL_2018/ros_ws/src/postes/src/Poste1.h
 ros/ros.h
 -
@@ -349,6 +353,12 @@ shuttles/srvGetShuttleStatus.h
 /home/projn7cellule/PL_2018/ros_ws/src/postes/src/main_poste1.cpp
 Poste1.h
 /home/projn7cellule/PL_2018/ros_ws/src/postes/src/Poste1.h
+
+/home/projn7cellule/PL_2018/ros_ws/src/postes/src/productPost.cpp
+ros/ros.h
+-
+productPost.h
+/home/projn7cellule/PL_2018/ros_ws/src/postes/src/productPost.h
 
 /home/projn7cellule/PL_2018/ros_ws/src/postes/src/productPost.h
 ros/ros.h
