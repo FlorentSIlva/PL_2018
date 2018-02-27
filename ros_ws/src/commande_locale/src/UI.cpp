@@ -212,7 +212,7 @@ void UI::onMouse_internal( int event, int x, int y)
 	static vrep_common::simRosLoadModel srv_LoadModel;
 
 	switch(event) {
-		case cv::EVENT_LBUTTONDOWN :
+		case cv::EVENT_LBUTTONDOWN :   // Event lorsque l'on clique sur le bouton gauche de la souris 
    		if(y>playButton_y_0 && y < playButton_y_0+playButton_y_size && x>playButton_x_0 && x < playButton_x_0 + playButton_x_size && mode!= 1) {
 					playButton_Down.copyTo(imageTot.rowRange(playButton_y_0,playButton_y_0+playButton_y_size).colRange(playButton_x_0,playButton_x_0+playButton_x_size));
 					pauseButton.copyTo(imageTot.rowRange(pauseButton_y_0,pauseButton_y_0+pauseButton_y_size).colRange(pauseButton_x_0,pauseButton_x_0+pauseButton_x_size));
@@ -229,7 +229,7 @@ void UI::onMouse_internal( int event, int x, int y)
 					configuration->ProductAdd('F', typeNextShuttle);
 					}
 
-		else if(y>modeButton_y_0 && y < modeButton_y_0+shuttleButton_y_size && x>modeButton_x_0 && x < modeButton_x_0 + modeButton_x_size && modeShuttle == 0 && mode!=1)
+		else if(y>modeButton_y_0 && y < modeButton_y_0+shuttleButton_y_size && x>modeButton_x_0 && x < modeButton_x_0 + modeButton_x_size && modeShuttle == 0 && mode!=1 && modeTER == 0)
 		{
 				modeAutoButton.copyTo(imageTot.rowRange(modeButton_y_0,modeButton_y_0+modeButton_y_size).colRange(modeButton_x_0,modeButton_x_0+modeButton_x_size));
 				shuttleButton_Down.copyTo(imageTot.rowRange(shuttleButton_y_0,shuttleButton_y_0+shuttleButton_y_size).colRange(shuttleButton_x_0,shuttleButton_x_0+shuttleButton_x_size));
@@ -238,7 +238,7 @@ void UI::onMouse_internal( int event, int x, int y)
 				modeMsg.data = true;
 				pubStateButton.publish(modeMsg);
 		}		
-		else if(y>modeButton_y_0 && y < modeButton_y_0+shuttleButton_y_size && x>modeButton_x_0 && x < modeButton_x_0 + modeButton_x_size && modeShuttle == 1 && mode!=1)
+		else if(y>modeButton_y_0 && y < modeButton_y_0+shuttleButton_y_size && x>modeButton_x_0 && x < modeButton_x_0 + modeButton_x_size && modeShuttle == 1 && mode!=1 && modeTER == 0)
 		{
 				modeManuButton.copyTo(imageTot.rowRange(modeButton_y_0,modeButton_y_0+modeButton_y_size).colRange(modeButton_x_0,modeButton_x_0+modeButton_x_size));
 				modeShuttle = 2;
@@ -247,7 +247,7 @@ void UI::onMouse_internal( int event, int x, int y)
 				modeMsg.data = false;
 				pubStateButton.publish(modeMsg);
 		}
-		else if(y>modeButton_y_0 && y < modeButton_y_0+shuttleButton_y_size && x>modeButton_x_0 && x < modeButton_x_0 + modeButton_x_size && modeShuttle == 2 && mode!=1)
+		else if(y>modeButton_y_0 && y < modeButton_y_0+shuttleButton_y_size && x>modeButton_x_0 && x < modeButton_x_0 + modeButton_x_size && modeShuttle == 2 && mode!=1 && modeTER == 0)
 		{
 				modeRandButton.copyTo(imageTot.rowRange(modeButton_y_0,modeButton_y_0+modeButton_y_size).colRange(modeButton_x_0,modeButton_x_0+modeButton_x_size));
 				modeShuttle = 3;
@@ -256,7 +256,7 @@ void UI::onMouse_internal( int event, int x, int y)
 				modeMsg.data = false;
 				pubStateButton.publish(modeMsg);
 		}
-		else if(y>modeButton_y_0 && y < modeButton_y_0+shuttleButton_y_size && x>modeButton_x_0 && x < modeButton_x_0 + modeButton_x_size && modeShuttle == 3 && mode!=1)
+		else if(y>modeButton_y_0 && y < modeButton_y_0+shuttleButton_y_size && x>modeButton_x_0 && x < modeButton_x_0 + modeButton_x_size && modeShuttle == 3 && mode!=1 && modeTER == 0)
 		{
 				modeAutoButton.copyTo(imageTot.rowRange(modeButton_y_0,modeButton_y_0+modeButton_y_size).colRange(modeButton_x_0,modeButton_x_0+modeButton_x_size));
 				shuttleButton_Down.copyTo(imageTot.rowRange(shuttleButton_y_0,shuttleButton_y_0+shuttleButton_y_size).colRange(shuttleButton_x_0,shuttleButton_x_0+shuttleButton_x_size));
@@ -269,6 +269,17 @@ void UI::onMouse_internal( int event, int x, int y)
 		{
 				TERbutton_on.copyTo(imageTot.rowRange(TERbutton_y_0,TERbutton_y_0+TERbutton_y_size).colRange(TERbutton_x_0,TERbutton_x_0+TERbutton_x_size));
 				modeTER = 1;
+				std_msgs::Bool modeTERmsg;
+				modeTERmsg.data = true;
+				pubStateTERbutton.publish(modeTERmsg);
+		}
+		else if(y>TERbutton_y_0 && y < TERbutton_y_0+TERbutton_y_size && x>TERbutton_x_0 && x < TERbutton_x_0+TERbutton_x_size && modeTER == 1)
+		{
+				TERbutton.copyTo(imageTot.rowRange(TERbutton_y_0,TERbutton_y_0+TERbutton_y_size).colRange(TERbutton_x_0,TERbutton_x_0+TERbutton_x_size));
+				modeTER = 0;
+				std_msgs::Bool modeTERmsg;
+				modeTERmsg.data = false;
+				pubStateTERbutton.publish(modeTERmsg);
 		}	
 		
 		break;
@@ -431,6 +442,11 @@ void UI::init(ros::NodeHandle nh){   // Fonction d'initialisation de l'ui
 	modeButton.copyTo(imageTot.rowRange(modeButton_y_0,modeButton_y_0+modeButton_y_size).colRange(modeButton_x_0,modeButton_x_0+modeButton_x_size));
 	TERbutton.copyTo(imageTot.rowRange(TERbutton_y_0,TERbutton_y_0+TERbutton_y_size).colRange(TERbutton_x_0,TERbutton_x_0+TERbutton_x_size));
  
+	// Cadre des produits
+
+	rectangle(imageTot, cv::Point(590-205, 936), cv::Point(590+205, 936-75), cv::Scalar(100,0,100), 2 );
+	cv::putText(imageTot, "Produits en attente :", cv::Point(590-205+5, 936-75+15), 2, 0.5, cv::Scalar(0,0,0), 1, 8, false);
+
 	// Window
 	cv::namedWindow("Simulation", 7);
 	cv::startWindowThread();
@@ -457,6 +473,7 @@ void UI::init(ros::NodeHandle nh){   // Fonction d'initialisation de l'ui
 	image_transport::ImageTransport it(nh);
 	subImage = it.subscribe("vrep/VisionSensorData", 1, &UI::getSimuStream, this);
 	pubStateButton = nh.advertise<std_msgs::Bool>("/ordonnancement/On_Off",10);
+	pubStateTERbutton = nh.advertise<std_msgs::Bool>("/ordonnancement/TER_on_off",10);
 
 	mode = 0; // Mode 0 : Pause - Mode 1 : Play
 	modeShuttle = 0;

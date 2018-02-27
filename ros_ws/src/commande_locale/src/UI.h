@@ -46,7 +46,7 @@ class UI
 		cv::Mat shuttleButton_Down;		// Bouton navette lorsque l'on apuie dessus 
 		cv::Mat shuttleButton_On;		// Bouton navette lorsque la souris est dessus			
 		cv::Mat modeButton;			// Bouton mode
-		cv::Mat modeButton_On;                  // Bouton mode lorsque la souris est dessu
+		cv::Mat modeButton_On;                  // Bouton mode lorsque la souris est dessus
 		cv::Mat modeRandButton;			// Bouton random
 		cv::Mat modeRandButton_On;		// Bouton randon appuyé
 		cv::Mat modeManuButton;			// Bouton mode manuel
@@ -66,6 +66,7 @@ class UI
 
 		image_transport::Subscriber subImage;	// Subscriber pour recuperer l'image depuis la simu V-rep
 		ros::Publisher pubStateButton;		// Publisher pour envoyer l'état du bouton
+		ros::Publisher pubStateTERbutton;	// Publisher pour envoyer l'état du bouton 
 
 	public:
 		UI(vrepController* VREPContrl, Configuration* config);    
