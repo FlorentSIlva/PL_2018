@@ -69,9 +69,12 @@ Commande::Commande(ros::NodeHandle noeud, std::string executionPath)
 	pubProductPutOnShuttleP3 = noeud.advertise<std_msgs::Int32>("/Cmde_P3/ProduitPose", 10);
 	pubProductPutOnShuttleP4 = noeud.advertise<std_msgs::Int32>("/Cmde_P4/ProduitPose", 10);
 
-	//publisher pour changer les destinations
+	// Publisher pour changer les destinations
 	pubDestinationChange = noeud.advertise<shuttles::msgShuttleChange>("/commande_navette/ShuttleDChange", 10);
 
+	// Publisher pour détruire les navettes
+	pubDestroyShuttle = noeud.advertise<std_msgs::Int32>("/commande_navette/Destroy_Shuttle",10);
+	pubDeleteShuttle = noeud.advertise<aiguillages::ExchangeSh>("/commande_locale/Delete_Shuttle", 10);
 
 	// Subscribers quand navettes vides présentes aux postes
 	subEmptyShuttleReadyP1 = noeud.subscribe("/Cmde_P1/NavetteVidePrete", 10, &Commande::GestionNavetteVideP1Callback, this);
@@ -93,7 +96,6 @@ Commande::Commande(ros::NodeHandle noeud, std::string executionPath)
 	client_GetShuttleState = noeud.serviceClient<shuttles::srvGetShuttleStatus>("/commande_navette/srvGetShuttleStatus");
 	client_GetEmptyShuttle = noeud.serviceClient<shuttles::srvGetEmptyShuttles>("/commande_navette/srvGetEmptyShuttles");
 	NewShuttle = noeud.subscribe("/commande_locale/New_Shuttle_Handle", 10, &Commande::NewShuttleCallBack, this);
-
 
 	// Initialisation des Actionneurs
 
@@ -124,6 +126,8 @@ Commande::Commande(ros::NodeHandle noeud, std::string executionPath)
 	NavetteEnP4=0;
 
 	NewHandle=0;
+
+	
 	
 
 
@@ -626,7 +630,16 @@ void Commande::ReinitialiserNouvelleNavette()
 	NewHandle=0;
 }
 
-
+//Fonction permettant de détruire une navette
+void Commande::DestroyShuttle(int handle)
+{
+	cout << "destuction naveteeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee" << endl;
+	std_msgs::Int32 delmsg;
+	delmsg.data = handle;
+	cout << delmsg.data << endl;
+	pubDestroyShuttle.publish(delmsg);
+	pubDeleteShuttle.publish(delmsg);
+}
 
 
 

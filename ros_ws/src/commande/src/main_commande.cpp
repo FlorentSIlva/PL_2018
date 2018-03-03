@@ -4,6 +4,8 @@
  * ************************************* *
 */
 
+// PARTIE A GARDER POUR LES MODIFICATION DU RDP //
+
 #include "capteurs.h" 
 #include "actionneurs.h" 
 #include "commande.h"
@@ -30,6 +32,7 @@ int main(int argc, char **argv)
 //création et initialisation des objets Capteur et Actionneurs
 
 	Commande cmd(noeud,argv[0]);
+	
 	
 	Robots Robots(noeud);
 
@@ -160,6 +163,7 @@ int main(int argc, char **argv)
 			modif=1;
 			M[11]=M[10];
 			M[10]=0;
+			cmd.DestroyShuttle(M[11]);
 			cmd.NavettePartie(1);
 			cmd.PiecePrise(1);
 			M[0]++;

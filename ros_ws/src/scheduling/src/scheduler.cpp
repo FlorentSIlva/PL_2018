@@ -6,7 +6,7 @@
 // Construteur
 Scheduler::Scheduler()
 {
-		// Initilisation de quelques valeurs par défaut
+	// Initilisation de quelques valeurs par défaut
 	numberOfProduct = 0;
 	nextCount = 0;
 	lastLaunchDate = 0;
@@ -26,31 +26,31 @@ bool Scheduler::init(ros::NodeHandle nh, std::string executionPath)
 	pubCreateShuttle = nh.advertise<scheduling::Msg_LoadShuttle>("/scheduling/NextProduct",10);
 	pubDelShuttle = nh.advertise<std_msgs::Int32>("/commande_navette/DelShuttle",10);
 
-// Récupération du chemin vers le Working_Folder, permet de travailler en chemin relatif
-int count = 0 ;
-int pos = 0 ;
-while (count < 4) // le chemin sous linux est normalement standard d'où la présence de la constante 4, il est possible qu'il faille faire évoluer ce point si ce n'est plus le cas
-	{
-	if(executionPath[pos] == '/') count++;  // on cherche dans la chaine le 4ème '/' qui permet de récupérer le chemin absolu du Working Folder
-	pos++;					// Cela est normalement garanti par le faite que le setup install toujours dans le dossier racine de l'utilisateur
-	}
+	// Récupération du chemin vers le Working_Folder, permet de travailler en chemin relatif
+	int count = 0 ;
+	int pos = 0 ;
+	while (count < 4) // le chemin sous linux est normalement standard d'où la présence de la constante 4, il est possible qu'il faille faire évoluer ce point si ce n'est plus le cas
+		{
+		if(executionPath[pos] == '/') count++;  // on cherche dans la chaine le 4ème '/' qui permet de récupérer le chemin absolu du Working Folder
+		pos++;					// Cela est normalement garanti par le faite que le setup install toujours dans le dossier racine de l'utilisateur
+		}
 	
-std::string Working_Folder = executionPath.substr(0,pos);
-ROS_INFO ("$%s$", Working_Folder.c_str()) ;
+	std::string Working_Folder = executionPath.substr(0,pos);
+	ROS_INFO ("$%s$", Working_Folder.c_str()) ;
 
 	
-//Initialisation des produits à l'aide du fichier de configuration
+	//Initialisation des produits à l'aide du fichier de configuration
 
 	//Définition du chemin du fichier de config et log
-configFile = Working_Folder + "/ProductConfiguration.config";
-logFile = Working_Folder + "/Statistic.txt";
+	configFile = Working_Folder + "/ProductConfiguration.config";
+	logFile = Working_Folder + "/Statistic.txt";
 
-std::ifstream streamConfigFile(configFile.c_str(), std::ios::in); 	// Ouverture en lecture seule du fichier de configuration
+	std::ifstream streamConfigFile(configFile.c_str(), std::ios::in); 	// Ouverture en lecture seule du fichier de configuration
 	
 	// Pour comprendre la suite de la lecture du fichier, il peut etre utile de se référer à http://www.cplusplus.com/reference/iolibrary/
 	
-if (streamConfigFile)	//Si l'ouverture à reussi
-{
+	if (streamConfigFile)	//Si l'ouverture à reussi
+	{
 	std::string pNameFF,destinationPart,launchDatePart,jobTimePart,maxShuttlePart,contents; // string servant à l'extraction d'information
 
 	//saut des lignes d'entêtes, repèrage du start (on passe toutes les lignes tant que le mot Start n'y figure pas)
@@ -196,10 +196,10 @@ if (streamConfigFile)	//Si l'ouverture à reussi
        	else ROS_ERROR("Impossible de creer ou ouvrir le fichier Statistic.txt !");
 	return true;
 
-}
-else ROS_ERROR("Impossible d'ouvrir le fichier ProductConfiguration.txt !");
-return false;
-}
+	}
+	else ROS_ERROR("Impossible d'ouvrir le fichier ProductConfiguration.txt !");
+	return false;
+	}
 
 // Destructor
 Scheduler::~Scheduler()
@@ -210,7 +210,7 @@ Scheduler::~Scheduler()
 // Scheduling Function
 void Scheduler::launchNextSchedule(){
 
-if (maxShuttleNumber >0)
+	if (maxShuttleNumber >0)
 	{
 
 	int nextDelay = scheduledLaunchDate[nextCount]; // définition next delays 
@@ -302,16 +302,16 @@ void Scheduler::initProduct(std::string pName, int pFirstDestination, int initPr
 
 // Subscribers Callback (Product end of manifacture)
 
-void Scheduler::productOutCallBack(const std_msgs::Int32::ConstPtr& msg) // on recoit le handle de la navette qui sort de la cellule
-{
-	srv_GetShuttleStatus.request.handle = msg->data;	// 
-	client_GetShuttleStatus.call(srv_GetShuttleStatus);	// recupération des infos sur la navette ( service du noeud shuttles)
-	client_simRosGetInfo.call(srv_GetInfoVREP);		// récupération info sur la simulation Vrep
+	void Scheduler::productOutCallBack(const std_msgs::Int32::ConstPtr& msg) // on recoit le handle de la navette qui sort de la cellule
+	{
+		srv_GetShuttleStatus.request.handle = msg->data;	// 
+		client_GetShuttleStatus.call(srv_GetShuttleStatus);	// recupération des infos sur la navette ( service du noeud shuttles)
+		client_simRosGetInfo.call(srv_GetInfoVREP);		// récupération info sur la simulation Vrep
 
-	std::string finalProductName;	// nom produit fini
-	Product* productPointer;	// pointer pour recherche dans la collection
-	
-	//ROS_INFO ( "srv_GetShuttleStatus.response.product = %d " ,srv_GetShuttleStatus.response.product);	
+		std::string finalProductName;	// nom produit fini
+		Product* productPointer;	// pointer pour recherche dans la collection
+		
+		//ROS_INFO ( "srv_GetShuttleStatus.response.product = %d " ,srv_GetShuttleStatus.response.product);	
 
 	for (iteratorPMapOut=ProductsMap.begin(); iteratorPMapOut!=ProductsMap.end(); ++iteratorPMapOut)	// On parcours l'ensemble de la collection
 	{

@@ -15,6 +15,7 @@
 #include "actionneurs.h"
 #include "capteurs.h" 
 #include "robots.h"
+#include <std_msgs/Bool.h>
 //#include "postes/productPost.h"
 
 #include <std_msgs/Int32.h>
@@ -63,7 +64,7 @@ private:
 	ros::Subscriber subProductInPostP3;
 	ros::Subscriber subProductInPostP4;
 
-
+	
 
 //Publisher
 
@@ -89,8 +90,11 @@ private:
 	ros::Publisher pubProductPutOnShuttleP4;
 
 	// Vers shuttles
+	ros::Publisher pubDeleteShuttleScheduler;
 	ros::Publisher pubDestinationChange;
 	shuttles::msgShuttleChange Newdestination;
+	ros::Publisher pubDestroyShuttle;
+	ros::Publisher pubDeleteShuttle;
 	
 	ros::Subscriber NewShuttle;
 
@@ -122,8 +126,6 @@ private:
 
 	/* Actionneurs */
 	bool STx[25],RxD[13],RxG[13],Vx[13],Dx[13],PIx[9];
-
-
 
 public:
 	commande_locale::Msg_StopControl actionneurs_simulation_Stop;
@@ -168,13 +170,14 @@ public:
 
 	void DefinirDestination(int handle, int destination);
 
-	int ProduitSurNavette(int handle);//Renvoie la destination du produit présent sur la navette
-	int NavetteStoppee(int numPoste); //Renvoie l'handle de la navette stoppée au niveau du poste numPoste si elle contient un produit, 0 sinon
-	int NavetteStoppeeVide(int numPoste); //Renvoie l'handle de la navette stoppée au niveau du poste numPoste si elle est vide, 0 sinon
-	void NavettePartie(int numPoste);//Remet la variable Navette en Pi à 0;
-	int NavetteDisponible();//Renvoie le handle d'une navette vide dans d0
-	int NouvelleNavette(); //Renvoie le handle de la navette qui est créée par le noeud Ordonnancement
-	void ReinitialiserNouvelleNavette();//Réinitialise le handle de la navette nouvellement créée
+	int ProduitSurNavette(int handle);		//Renvoie la destination du produit présent sur la navette
+	int NavetteStoppee(int numPoste); 		//Renvoie l'handle de la navette stoppée au niveau du poste numPoste si elle contient un produit, 0 sinon
+	int NavetteStoppeeVide(int numPoste); 		//Renvoie l'handle de la navette stoppée au niveau du poste numPoste si elle est vide, 0 sinon
+	void NavettePartie(int numPoste);		//Remet la variable Navette en Pi à 0;
+	int NavetteDisponible();			//Renvoie le handle d'une navette vide dans d0
+	int NouvelleNavette(); 				//Renvoie le handle de la navette qui est créée par le noeud Ordonnancement
+	void ReinitialiserNouvelleNavette();		//Réinitialise le handle de la navette nouvellement créée
+	void DestroyShuttle(int handle);		//Détruit la navette qui porte le shuttle
 
 
 };

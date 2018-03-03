@@ -212,10 +212,6 @@ aiguillages/ExchangeSh.h
 shuttles/srvGetShuttleStatus.h
 -
 
-/home/projn7cellule/PL_2018/ros_ws/src/aiguillages/src/Sh.cpp
-Sh.h
-/home/projn7cellule/PL_2018/ros_ws/src/aiguillages/src/Sh.h
-
 /home/projn7cellule/PL_2018/ros_ws/src/aiguillages/src/Sh.h
 ros/ros.h
 -

@@ -49,6 +49,7 @@ private:
 	ros::Publisher DeleteShuttle;
 	ros::Publisher DeleteShuttleScheduler;
 	ros::Subscriber ReceiveShuttle;
+	ros::Subscriber subDestroyShuttle;
 	aiguillages::ExchangeSh HandleShuttle;
 	std_msgs::Int32 DeleteSh;
 
@@ -98,6 +99,7 @@ public:
 	void AiguillageCallback(const std_msgs::Int32::ConstPtr& msg);
 
 	void NewShuttleCallBack(const aiguillages::ExchangeSh::ConstPtr& msg);
+	void DestroyShuttleCallBack(const std_msgs::Int32::ConstPtr& msg);
 	
 	void Droit();
 	void Gauche();
@@ -107,6 +109,7 @@ public:
 	void START();
 	int get_Sh_Handle();
 	void Send_Sh(int destination);
+	void Send_Sh_Bis(int destination, int handle);
 	float get_time();
 	void wait_vrep(float dt);
 

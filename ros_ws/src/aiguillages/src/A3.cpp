@@ -31,6 +31,8 @@ A3::A3(ros::NodeHandle nh)
 	SendShuttle_g = nh.advertise<aiguillages::ExchangeSh>("/IOShuttle/A3_A10", 1000);
 	//SendShuttle_d = nh.advertise<aiguillages::ExchangeSh>("/IOShuttle/A1_P3", 1000);//avec les postes
 	ReceiveShuttle = nh.subscribe("/IOShuttle/A2_A3", 1000, &A3::NewShuttleCallBack, this);
+
+	subDestroyShuttle = nh.subscribe("/commande_navette/Destroy_Shuttle", 10, &A3::DestroyShuttleCallBack, this);
 	
 
 	
@@ -155,10 +157,16 @@ void A3::NewShuttleCallBack(const aiguillages::ExchangeSh::ConstPtr& msg)
       		std::cout << " " << shuttlePointer->get_handle();
    		 std::cout << endl;
 	}
+}
 
-	
-
-
+void A3::DestroyShuttleCallBack(const std_msgs::Int32::ConstPtr& msg)
+{
+	int del = msg->data;
+	if (del) 
+	{
+		A3::Send_Sh_Bis(1, del);
+		ROS_INFO("Navette a detruire !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+	}
 }
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////Commande Aiguillage/////////////////////////////////
@@ -363,6 +371,42 @@ void A3::Send_Sh(int destination)
 	}
 
 }
+
+void A3::Send_Sh_Bis(int destination, int handle)
+{
+	std::map<int,Sh*>::iterator it;
+	int handle_min;
+	
+	handle_min=handle;
+
+	HandleShuttle.handle=handle_min;
+	if(destination==-1)
+	{
+		SendShuttle_g.publish(HandleShuttle);
+	}else if(destination==1)
+	{
+		DeleteSh.data=HandleShuttle.handle;
+		cout<<"delete shuttle"<<HandleShuttle<<endl;
+		DeleteShuttle.publish(HandleShuttle);
+		DeleteShuttleScheduler.publish(DeleteSh);
+	}
+
+	Sh* shuttlePointer;	
+	
+	std::pair <std::multimap<int,Sh*>::iterator, std::multimap<int,Sh*>::iterator> ret2;
+   	ret2 = ShuttlesMap.equal_range(0);
+   	 for (std::multimap<int,Sh*>::iterator it=ret2.first; it!=ret2.second; ++it)
+	{
+		shuttlePointer = it->second;
+		if(shuttlePointer->get_handle()==handle_min)
+		{
+			ShuttlesMap.erase(it);
+		}
+   		
+	}
+
+}
+
 
 float A3::get_time()
 {
