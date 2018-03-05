@@ -224,14 +224,6 @@ vrep_common/simRosEnablePublisher.h
 vrep_common/simRosEnableSubscriber.h
 -
 
-/home/projn7cellule/PL_2018/ros_ws/src/aiguillages/src/aiguillage_3.cpp
-ros/ros.h
--
-unistd.h
--
-A3.h
-/home/projn7cellule/PL_2018/ros_ws/src/aiguillages/src/A3.h
-
 /opt/ros/indigo/include/XmlRpcDecl.h
 ros/macros.h
 -

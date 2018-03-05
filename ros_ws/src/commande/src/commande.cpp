@@ -74,7 +74,6 @@ Commande::Commande(ros::NodeHandle noeud, std::string executionPath)
 
 	// Publisher pour détruire les navettes
 	pubDestroyShuttle = noeud.advertise<std_msgs::Int32>("/commande_navette/Destroy_Shuttle",10);
-	pubDeleteShuttle = noeud.advertise<aiguillages::ExchangeSh>("/commande_locale/Delete_Shuttle", 10);
 
 	// Subscribers quand navettes vides présentes aux postes
 	subEmptyShuttleReadyP1 = noeud.subscribe("/Cmde_P1/NavetteVidePrete", 10, &Commande::GestionNavetteVideP1Callback, this);
@@ -638,7 +637,6 @@ void Commande::DestroyShuttle(int handle)
 	delmsg.data = handle;
 	cout << delmsg.data << endl;
 	pubDestroyShuttle.publish(delmsg);
-	pubDeleteShuttle.publish(delmsg);
 }
 
 

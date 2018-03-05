@@ -81,14 +81,14 @@ int main(int argc, char **argv)
 		
 ////////////////////Poste 1//////////////////////////////
 
-		//t1
+/*		//t1
 		if(M[1]!=0 && cmd.NavetteStoppeeVide(1)!=0)
 		{
 			modif=1;
 			M[2]=cmd.NavetteStoppeeVide(1);
 			M[1]--;
 		}
-
+*/
 		//t2
 		if(M[3]!=0 && cmd.NavetteStoppee(1)!=0)
 		{
@@ -99,7 +99,7 @@ int main(int argc, char **argv)
 			
 		}
 
-		//t3
+/*		//t3
 		if(M[2]!=0 && M[50]==1 && cmd.ProduitSurNavette(M[2])==0) 
 		{
 			modif=1;
@@ -135,7 +135,7 @@ int main(int argc, char **argv)
 			M[8]=M[7];
 			M[7]=0;
 			Robots.MonterBras(1);
-		}
+		} */
 
 		//t7
 		if(M[4]!=0 && M[50]==1 && cmd.ProduitSurNavette(M[4])!=0)
@@ -164,13 +164,13 @@ int main(int argc, char **argv)
 			M[11]=M[10];
 			M[10]=0;
 			cmd.DestroyShuttle(M[11]);
-			cmd.NavettePartie(1);
-			cmd.PiecePrise(1);
-			M[0]++;
-			Robots.ControlerRobot(1, 1, -1, -1);
+			//cmd.NavettePartie(1);
+			//cmd.PiecePrise(1);
+			//M[0]++;
+			//Robots.ControlerRobot(1, 1, -1, -1);
 		}
 
-		//t10
+/*		//t10
 		if(M[11]!=0  &&   Robots.RobotEnPosition(1)==1 && Robots.BrasEnPosition(1)==-1 && Robots.PinceEnPosition(1)==-1)
 		{
 			modif=1;
@@ -812,7 +812,7 @@ int main(int argc, char **argv)
 			M[315]=0;
 		}
 
-		Nb_Place_T4=15;
+		Nb_Place_T4=15; */
 
 
 ////////////////////Affichage//////////////////////////////////////////////

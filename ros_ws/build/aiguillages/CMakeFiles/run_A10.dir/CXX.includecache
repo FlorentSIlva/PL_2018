@@ -146,10 +146,6 @@ ros/message_operations.h
 std_msgs/Header.h
 -
 
-/home/projn7cellule/PL_2018/ros_ws/src/aiguillages/src/A10.cpp
-A10.h
-/home/projn7cellule/PL_2018/ros_ws/src/aiguillages/src/A10.h
-
 /home/projn7cellule/PL_2018/ros_ws/src/aiguillages/src/A10.h
 ros/ros.h
 -
@@ -169,10 +165,6 @@ Sh.h
 /home/projn7cellule/PL_2018/ros_ws/src/aiguillages/src/Sh.h
 aiguillages/ExchangeSh.h
 /home/projn7cellule/PL_2018/ros_ws/src/aiguillages/src/aiguillages/ExchangeSh.h
-
-/home/projn7cellule/PL_2018/ros_ws/src/aiguillages/src/Sh.cpp
-Sh.h
-/home/projn7cellule/PL_2018/ros_ws/src/aiguillages/src/Sh.h
 
 /home/projn7cellule/PL_2018/ros_ws/src/aiguillages/src/Sh.h
 ros/ros.h
