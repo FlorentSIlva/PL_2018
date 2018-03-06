@@ -445,7 +445,7 @@ void UI::init(ros::NodeHandle nh){   // Fonction d'initialisation de l'ui
 	// Cadre des produits
 
 	rectangle(imageTot, cv::Point(590-205, 936), cv::Point(590+205, 936-75), cv::Scalar(100,0,100), 2 );
-	cv::putText(imageTot, "Produits en attente :", cv::Point(590-205+5, 936-75+15), 2, 0.5, cv::Scalar(0,0,0), 1, 8, false);
+	cv::putText(imageTot, "Produits a fabriquer :", cv::Point(590-205+5, 936-75+15), 2, 0.5, cv::Scalar(0,0,0), 1, 8, false);
 
 	// Window
 	cv::namedWindow("Simulation", 7);
@@ -478,6 +478,8 @@ void UI::init(ros::NodeHandle nh){   // Fonction d'initialisation de l'ui
 	mode = 0; // Mode 0 : Pause - Mode 1 : Play
 	modeShuttle = 0;
 	modeTER = 0;
+
+	subNombreDeProduits = nh.subscribe("/ordonnancement/NombreDeProduits",1,&UI::NombreDeProduitsCallBack,this);
 }
 
 
@@ -504,9 +506,23 @@ bool UI::checkWindow(){
 		return false;
 	  }
 	return true;
-
-
-
-
-
 }
+
+// ON ajoute le nombre de produits à l'interface
+
+
+
+void UI::NombreDeProduitsCallBack(const std_msgs::Int32::ConstPtr& NbMsg){
+
+	int Nb = NbMsg-> data;
+	std::string texte;
+	//std::string text = "" + Nb;
+	char numstr[21];
+	sprintf(numstr, "%d", Nb);
+	texte = numstr;
+	std::cout << "on est iciiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii" << std::endl;
+	cv::putText(imageTot, "AAAAAAAAAAAAAAAAAAAAA", cv::Point(700-205+5, 936-75+15), 2, 0.5, cv::Scalar(0,0,0), 1, 8, false);
+}
+
+
+

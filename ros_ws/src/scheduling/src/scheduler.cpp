@@ -26,6 +26,8 @@ bool Scheduler::init(ros::NodeHandle nh, std::string executionPath)
 	pubCreateShuttle = nh.advertise<scheduling::Msg_LoadShuttle>("/scheduling/NextProduct",10);
 	pubDelShuttle = nh.advertise<std_msgs::Int32>("/commande_navette/DelShuttle",10);
 
+	pubNombreDeProduits = nh.advertise<std_msgs::Int32>("/ordonnancement/NombreDeProduits",10);
+
 	// Récupération du chemin vers le Working_Folder, permet de travailler en chemin relatif
 	int count = 0 ;
 	int pos = 0 ;
@@ -159,12 +161,17 @@ bool Scheduler::init(ros::NodeHandle nh, std::string executionPath)
 			//ROS_INFO("CharNAME = %d",charName);
 			int pNumber = atoi(&charName) * 10 ; 
 			//ROS_INFO("pNumber = %d",pNumber);
-			numberOfProduct++; // on compte le nombre de produit 
+			numberOfProduct++; // on compte le nombre de produit
+			
+			;
 			initProduct(pNameFF,destination[0], pNumber, manRSize,numberOfProduct);  // initialisation de l'objet produit
 			}
 		}
 	// Fin config produit 
 	
+	std_msgs::Int32 NbMsg;
+	NbMsg.data = numberOfProduct;
+	pubNombreDeProduits.publish(NbMsg);
 	ROS_INFO("Number of Product = %d", numberOfProduct);
 	iteratorPMap = ProductsMap.begin(); // initilise l'iterateur sur la collection de produit
 	nextCount = numberOfProduct-1; // Permet de bien placer les delays dans launch next schedule, on va effectuer le délays entre le dernier et le premier produit avant la lancement du premier produit

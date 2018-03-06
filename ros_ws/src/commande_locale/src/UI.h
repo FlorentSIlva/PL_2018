@@ -68,6 +68,8 @@ class UI
 		ros::Publisher pubStateButton;		// Publisher pour envoyer l'état du bouton
 		ros::Publisher pubStateTERbutton;	// Publisher pour envoyer l'état du bouton 
 
+		ros::Subscriber subNombreDeProduits; 	// Subscriber pour récuperer le nombre de produits 
+
 	public:
 		UI(vrepController* VREPContrl, Configuration* config);    
 		void DrawRailSensorImg(commande_locale::Msg_SensorState SensorState);			// Gere l'affichage de l'état des capteurs des rails
@@ -80,7 +82,8 @@ class UI
 		void onMouse_internal( int event, int x, int y);
 		friend void onMouse(int event, int x, int y, int, void* userdata);
 		void close();
-		bool checkWindow(); 
+		bool checkWindow();
+		void NombreDeProduitsCallBack(const std_msgs::Int32::ConstPtr& NbMsg);		// Affiche le nombre de produit à fabriquer dans la simulation 
 		
 	
 };

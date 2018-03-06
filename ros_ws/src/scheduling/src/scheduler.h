@@ -48,6 +48,8 @@ vrep_common::simRosGetInfo srv_GetInfoVREP;
 ros::ServiceClient client_GetShuttleStatus;
 shuttles::srvGetShuttleStatus srv_GetShuttleStatus;
 
+ros::Publisher pubNombreDeProduits;
+
 
 
 public:
