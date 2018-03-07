@@ -7,6 +7,7 @@
 #include <string>
 #include <std_msgs/Int32.h>
 #include <std_msgs/Bool.h>
+#include <std_msgs/String.h>
 #include <cstdlib>
 #include <stdlib.h>
 #include <map>
@@ -32,6 +33,8 @@ int scheduledLaunchDate[10];
 int numberOfProduct;
 int nextCount;
 float lastLaunchDate;
+bool init_var;
+std::string nom_produits[100];
 
 std::string configFile, logFile;
 
@@ -49,6 +52,7 @@ ros::ServiceClient client_GetShuttleStatus;
 shuttles::srvGetShuttleStatus srv_GetShuttleStatus;
 
 ros::Publisher pubNombreDeProduits;
+ros::Publisher pubNomProduits;
 
 
 

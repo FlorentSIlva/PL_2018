@@ -243,20 +243,6 @@ vrep_common/simRosGetInfoResponse.h
 -
 
 /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosGetInfoRequest.h
-string
--
-vector
--
-map
--
-ros/types.h
--
-ros/serialization.h
--
-ros/builtin_message_traits.h
--
-ros/message_operations.h
--
 
 /home/projn7cellule/PL_2018/ros_ws/devel/include/vrep_common/simRosGetInfoResponse.h
 string
@@ -353,6 +339,12 @@ shuttles/srvGetShuttleStatus.h
 /home/projn7cellule/PL_2018/ros_ws/src/postes/src/main_poste1.cpp
 Poste1.h
 /home/projn7cellule/PL_2018/ros_ws/src/postes/src/Poste1.h
+
+/home/projn7cellule/PL_2018/ros_ws/src/postes/src/productPost.cpp
+ros/ros.h
+-
+productPost.h
+/home/projn7cellule/PL_2018/ros_ws/src/postes/src/productPost.h
 
 /home/projn7cellule/PL_2018/ros_ws/src/postes/src/productPost.h
 ros/ros.h

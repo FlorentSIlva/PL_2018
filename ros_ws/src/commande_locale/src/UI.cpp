@@ -479,7 +479,10 @@ void UI::init(ros::NodeHandle nh){   // Fonction d'initialisation de l'ui
 	modeShuttle = 0;
 	modeTER = 0;
 
+	TxtNomProduits = "Liste des produits a faire : ";
+
 	subNombreDeProduits = nh.subscribe("/ordonnancement/NombreDeProduits",1,&UI::NombreDeProduitsCallBack,this);
+	subNomProduits = nh.subscribe("/ordonnancement/NomProduits",100,&UI::NomProduitsCallBack,this);
 }
 
 
@@ -517,12 +520,20 @@ void UI::NombreDeProduitsCallBack(const std_msgs::Int32::ConstPtr& NbMsg){
 	int Nb = NbMsg-> data;
 	std::string texte;
 	//std::string text = "" + Nb;
-	char numstr[21];
+	char numstr[23];
 	sprintf(numstr, "%d", Nb);
-	texte = numstr;
-	std::cout << "on est iciiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii" << std::endl;
-	cv::putText(imageTot, "AAAAAAAAAAAAAAAAAAAAA", cv::Point(700-205+5, 936-75+15), 2, 0.5, cv::Scalar(0,0,0), 1, 8, false);
+	texte = "Produits a fabriquer : ";
+	texte += numstr;
+	cv::putText(imageTot, texte, cv::Point(590-205+5, 936-75+15), 2, 0.5, cv::Scalar(0,0,0), 1, 8, false);
 }
 
+void UI::NomProduitsCallBack(const std_msgs::String::ConstPtr& NomMsg){
 
+	std::string ajout = NomMsg->data;	
+	TxtNomProduits += ajout;
+	TxtNomProduits += " ";
+	std::cout << TxtNomProduits << std::endl;
+	cv::putText(imageTot, TxtNomProduits, cv::Point(590-205+5, 966-75+15), 2, 0.5, cv::Scalar(0,0,0), 1, 8, false);
+}
+	
 

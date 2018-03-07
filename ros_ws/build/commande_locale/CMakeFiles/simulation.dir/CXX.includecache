@@ -505,6 +505,8 @@ string
 -
 math.h
 -
+vector
+-
 image_transport/image_transport.h
 -
 opencv2/core/core.hpp
@@ -514,6 +516,10 @@ opencv2/highgui/highgui.hpp
 cv_bridge/cv_bridge.h
 -
 std_msgs/Bool.h
+-
+std_msgs/Int32.h
+-
+std_msgs/String.h
 -
 commande_locale/Msg_SensorState.h
 -
@@ -1455,6 +1461,22 @@ ros/message_operations.h
 -
 
 /opt/ros/indigo/include/std_msgs/Int32.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+
+/opt/ros/indigo/include/std_msgs/String.h
 string
 -
 vector

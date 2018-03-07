@@ -12,6 +12,7 @@
 #include <ros/ros.h>
 #include <string>
 #include <math.h>
+#include <vector>
 
 // Image Streaming
 #include <image_transport/image_transport.h>
@@ -20,6 +21,8 @@
 #include "opencv2/highgui/highgui.hpp"
 #include <cv_bridge/cv_bridge.h>
 #include <std_msgs/Bool.h>
+#include <std_msgs/Int32.h>
+#include <std_msgs/String.h>
 #include <commande_locale/Msg_SensorState.h>
 #include "vrepController.h"
 #include "configuration.h"
@@ -61,6 +64,7 @@ class UI
 		int mode;				// Variable contenant l'état de la simu 0 = pause, 1 = play
 		int modeShuttle;
 		int modeTER;
+		std::string TxtNomProduits;
 		
 		int typeNextShuttle; 
 
@@ -69,6 +73,7 @@ class UI
 		ros::Publisher pubStateTERbutton;	// Publisher pour envoyer l'état du bouton 
 
 		ros::Subscriber subNombreDeProduits; 	// Subscriber pour récuperer le nombre de produits 
+		ros::Subscriber subNomProduits;		// Subscriber pour récuperer le nom des produits
 
 	public:
 		UI(vrepController* VREPContrl, Configuration* config);    
@@ -83,7 +88,8 @@ class UI
 		friend void onMouse(int event, int x, int y, int, void* userdata);
 		void close();
 		bool checkWindow();
-		void NombreDeProduitsCallBack(const std_msgs::Int32::ConstPtr& NbMsg);		// Affiche le nombre de produit à fabriquer dans la simulation 
+		void NombreDeProduitsCallBack(const std_msgs::Int32::ConstPtr& NbMsg);			// Affiche le nombre de produit à fabriquer dans la simulation 
+		void NomProduitsCallBack(const std_msgs::String::ConstPtr& NomMsg); 		// Affiche le nom des produits à fabriquer dans la simulation
 		
 	
 };

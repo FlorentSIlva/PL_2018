@@ -11,6 +11,10 @@ Scheduler::Scheduler()
 	nextCount = 0;
 	lastLaunchDate = 0;
 	maxShuttleNumber = 6;
+	init_var = true;
+	for(int i=0; i<100; i++) {
+		nom_produits[i]= "NULL";
+	}
 }
 
 // Initialisation de l'objet 
@@ -27,6 +31,7 @@ bool Scheduler::init(ros::NodeHandle nh, std::string executionPath)
 	pubDelShuttle = nh.advertise<std_msgs::Int32>("/commande_navette/DelShuttle",10);
 
 	pubNombreDeProduits = nh.advertise<std_msgs::Int32>("/ordonnancement/NombreDeProduits",10);
+	pubNomProduits = nh.advertise<std_msgs::String>("/ordonnancement/NomProduits",100);
 
 	// Récupération du chemin vers le Working_Folder, permet de travailler en chemin relatif
 	int count = 0 ;
@@ -99,7 +104,8 @@ bool Scheduler::init(ros::NodeHandle nh, std::string executionPath)
   		delete[] cstr1; // comme la création est dynamique, on supprime l'objet pour libèrer la mémoire
 	
 	//Configuration Produits
-	
+
+	int incrementation = 0;
 	while (std::getline(streamConfigFile, contents))
 		{
 		if (contents.find(':') != std::string::npos )   // Per ne prendre en considération que les lignes renseignés, ( dans les faits qui contiennent au moins un ':')
@@ -165,13 +171,12 @@ bool Scheduler::init(ros::NodeHandle nh, std::string executionPath)
 			
 			;
 			initProduct(pNameFF,destination[0], pNumber, manRSize,numberOfProduct);  // initialisation de l'objet produit
+			nom_produits[incrementation]=pNameFF.c_str();
+			incrementation++;
 			}
 		}
 	// Fin config produit 
 	
-	std_msgs::Int32 NbMsg;
-	NbMsg.data = numberOfProduct;
-	pubNombreDeProduits.publish(NbMsg);
 	ROS_INFO("Number of Product = %d", numberOfProduct);
 	iteratorPMap = ProductsMap.begin(); // initilise l'iterateur sur la collection de produit
 	nextCount = numberOfProduct-1; // Permet de bien placer les delays dans launch next schedule, on va effectuer le délays entre le dernier et le premier produit avant la lancement du premier produit
@@ -216,6 +221,20 @@ Scheduler::~Scheduler()
 
 // Scheduling Function
 void Scheduler::launchNextSchedule(){
+
+	if (init_var){
+		std_msgs::Int32 NbMsg;
+		NbMsg.data = numberOfProduct;
+		pubNombreDeProduits.publish(NbMsg);
+		std_msgs::String NomMsg;
+		for (int j=0; j<100; j++){
+			if (nom_produits[j] != "NULL"){
+				NomMsg.data = nom_produits[j];
+				pubNomProduits.publish(NomMsg);
+			}
+		}
+		init_var = false;
+	}
 
 	if (maxShuttleNumber >0)
 	{

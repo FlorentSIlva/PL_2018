@@ -116,6 +116,7 @@ commande_locale/CMakeFiles/simulation.dir/src/UI.cpp.o: /opt/ros/indigo/include/
 commande_locale/CMakeFiles/simulation.dir/src/UI.cpp.o: /opt/ros/indigo/include/std_msgs/Bool.h
 commande_locale/CMakeFiles/simulation.dir/src/UI.cpp.o: /opt/ros/indigo/include/std_msgs/Header.h
 commande_locale/CMakeFiles/simulation.dir/src/UI.cpp.o: /opt/ros/indigo/include/std_msgs/Int32.h
+commande_locale/CMakeFiles/simulation.dir/src/UI.cpp.o: /opt/ros/indigo/include/std_msgs/String.h
 
 commande_locale/CMakeFiles/simulation.dir/src/commande_locale.cpp.o: /home/projn7cellule/PL_2018/ros_ws/devel/include/aiguillages/ExchangeSh.h
 commande_locale/CMakeFiles/simulation.dir/src/commande_locale.cpp.o: /home/projn7cellule/PL_2018/ros_ws/devel/include/commande_locale/Msg_Color.h
@@ -243,6 +244,7 @@ commande_locale/CMakeFiles/simulation.dir/src/commande_locale.cpp.o: /opt/ros/in
 commande_locale/CMakeFiles/simulation.dir/src/commande_locale.cpp.o: /opt/ros/indigo/include/std_msgs/Bool.h
 commande_locale/CMakeFiles/simulation.dir/src/commande_locale.cpp.o: /opt/ros/indigo/include/std_msgs/Header.h
 commande_locale/CMakeFiles/simulation.dir/src/commande_locale.cpp.o: /opt/ros/indigo/include/std_msgs/Int32.h
+commande_locale/CMakeFiles/simulation.dir/src/commande_locale.cpp.o: /opt/ros/indigo/include/std_msgs/String.h
 
 commande_locale/CMakeFiles/simulation.dir/src/configuration.cpp.o: /home/projn7cellule/PL_2018/ros_ws/devel/include/aiguillages/ExchangeSh.h
 commande_locale/CMakeFiles/simulation.dir/src/configuration.cpp.o: /home/projn7cellule/PL_2018/ros_ws/devel/include/commande_locale/Msg_Color.h
@@ -468,6 +470,7 @@ commande_locale/CMakeFiles/simulation.dir/src/inOutController.cpp.o: /opt/ros/in
 commande_locale/CMakeFiles/simulation.dir/src/inOutController.cpp.o: /opt/ros/indigo/include/std_msgs/Bool.h
 commande_locale/CMakeFiles/simulation.dir/src/inOutController.cpp.o: /opt/ros/indigo/include/std_msgs/Header.h
 commande_locale/CMakeFiles/simulation.dir/src/inOutController.cpp.o: /opt/ros/indigo/include/std_msgs/Int32.h
+commande_locale/CMakeFiles/simulation.dir/src/inOutController.cpp.o: /opt/ros/indigo/include/std_msgs/String.h
 
 commande_locale/CMakeFiles/simulation.dir/src/product.cpp.o: /home/projn7cellule/PL_2018/ros_ws/src/commande_locale/src/product.cpp
 commande_locale/CMakeFiles/simulation.dir/src/product.cpp.o: /home/projn7cellule/PL_2018/ros_ws/src/commande_locale/src/product.h
