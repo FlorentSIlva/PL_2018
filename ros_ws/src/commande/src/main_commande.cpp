@@ -256,9 +256,9 @@ int main(int argc, char **argv)
 			M[15]=0;
 		}
 
-
+		*/
 		Nb_Place_T1=15;
-				
+/*				
 /////////////////////////Poste 2///////////////////////////////////////
 
 		//t101 M[101] : Navette vide ; M[103] : Navette occuppee
